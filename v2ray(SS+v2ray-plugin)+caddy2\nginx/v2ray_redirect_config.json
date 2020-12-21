@@ -31,6 +31,7 @@
       }
     },
     {
+      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
       "port": 2003, //此端口必须与下边"redirect"参数中端口对应
       "protocol": "shadowsocks",
       "settings": {
@@ -70,7 +71,7 @@
       "tag": "ss1redirect", //标签，与routing中标签对应。
       "protocol": "freedom",
       "settings": {
-        "redirect": "127.0.0.1:2005" //此端口必须与上边2005端口对应
+        "redirect": "127.0.0.1:2003" //此端口必须与上边2003端口对应
       }
     },
     {
