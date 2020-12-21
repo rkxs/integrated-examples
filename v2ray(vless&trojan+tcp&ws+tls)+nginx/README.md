@@ -14,7 +14,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中回落的端口或进程分开，分别对应。
+2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中的回落端口或进程必须分开，分别对应。
 
 3、trojan+tcp 目前不支持回落端口或进程分离 ，故 trojan+tcp 连接及回落只能二选一。此次 vless+tcp 应用默认采用 h2 连接及回落，故套娃 trojan+tcp 只能仅采用 h2 连接及回落。
 
@@ -36,7 +36,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中回落的端口或进程分开，分别对应。
+2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中的回落端口或进程必须分开，分别对应。
 
 3、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），故回落端口或进程必须分开。而 trojan+tcp 目前不支持回落端口或进程分离 ，故 trojan+tcp 连接及回落只能二选一。本次示例 trojan+tcp 采用 h2 连接及回落，毕竟 h2 连接自带链路复用，且延迟小一点。
 
@@ -56,7 +56,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中回落的端口或进程分开，分别对应。
+2、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中的回落端口或进程必须分开，分别对应。
 
 3、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），故回落端口或进程必须分开。而 trojan+tcp 目前不支持回落端口或进程分离 ，故 trojan+tcp 连接及回落只能二选一。本次示例 trojan+tcp 采用 h2 连接及回落，毕竟 h2 连接自带链路复用，且延迟小一点。
 
