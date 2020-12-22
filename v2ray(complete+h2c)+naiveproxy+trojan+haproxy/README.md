@@ -32,4 +32,4 @@
 
 9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
 
-10、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及进程分流，没有启用 PROXY protocol。
+10、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发(trojan，端口转发。）、端口回落及进程分流，没有启用 PROXY protocol。配置3：进程转发(trojan仅支持端口转发。）、端口回落及进程分流，仅回落启用了 PROXY protocol(trojan，不支持。）。
