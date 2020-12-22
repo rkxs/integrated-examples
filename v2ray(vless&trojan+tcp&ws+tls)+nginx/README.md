@@ -20,7 +20,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 4、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module（必须加） 及 stream_realip_module（可选加） 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-5、配置1：没有启用 PROXY protocol，端口回落。配置2：没有启用 PROXY protocol，进程回落。配置3：启用了 PROXY protocol，进程回落。
+5、配置1：端口转发、端口回落，没有启用 PROXY protocol。配置2：进程转发、进程回落，没有启用 PROXY protocol。配置3：进程转发、进程回落，启用了 PROXY protocol。
 
 二、nginx SNI 分流优化共用443端口（配置4/配置5/配置6） 
 
@@ -44,4 +44,4 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 5、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 与 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-6、配置4：没有启用 PROXY protocol，端口回落。配置5：没有启用 PROXY protocol，进程回落。配置6：启用了 PROXY protocol，进程回落。
+6、配置4：没有启用 PROXY protocol，端口回落。配置4：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落及进程分流，启用了 PROXY protocol。
