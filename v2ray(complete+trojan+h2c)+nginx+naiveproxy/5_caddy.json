@@ -20,7 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["unix//dev/shm/naiveh2.sock"], //naive&h2 server进程
+          "listen": ["unix//dev/shm/caddy.sock"], //caddy server进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }, 
