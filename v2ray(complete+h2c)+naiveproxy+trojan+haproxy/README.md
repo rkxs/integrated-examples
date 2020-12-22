@@ -26,10 +26,8 @@
 
 6、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-7、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置2不能用 nginx SNI 分流。
+7、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用 PROXY protocol。
 
-8、因 caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供回落服务，且 trojan(trojan-go) 不支持 PROXY protocol，故 caddy2 的 web 回落不能启用 PROXY protocol 接收，从而 vless+tcp 的 web 回落部分也不能启用 PROXY protocol 发送。
+8、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；nginx SNI分流针对trojan(trojan-go)端口分流。
 
-9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置采用端口回落。
-
-10、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发(trojan，端口转发。）、端口回落及进程分流，没有启用 PROXY protocol。配置3：进程转发(trojan仅支持端口转发。）、端口回落及进程分流，仅回落启用了 PROXY protocol(trojan不启用。）。
+9、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发(trojan，端口转发。）、端口回落及进程分流，没有启用 PROXY protocol。配置3：进程转发(trojan仅支持端口转发。）、端口回落及进程分流，仅回落启用了 PROXY protocol(trojan不启用。）。
