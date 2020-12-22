@@ -24,6 +24,6 @@ v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go)
 
 5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），v2ray SNI 分流不支持 PROXY protocol（发送），故所有配置不启用此项应用。
 
-6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故都采用端口回落。
+6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；nginx SNI分流针对trojan(trojan-go)端口分流。
 
-7、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落及进程分流，没有启用 PROXY protocol。
+7、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落及进程分流（trojan除外），没有启用 PROXY protocol。
