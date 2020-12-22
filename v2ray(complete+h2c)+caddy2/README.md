@@ -24,4 +24,4 @@ v2ray tcp 类应用直连。v2ray ws（WebSocket）类应用分流（回落）�
 
 4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
-5、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及进程分流，启用了 PROXY protocol。
+5、配置1：端口转发、端口回落，没有启用 PROXY protocol。配置2：进程转发、进程回落，没有启用 PROXY protocol。配置3：进程转发、进程回落，启用了 PROXY protocol。
