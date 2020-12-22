@@ -335,7 +335,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/caddy.sock" //与caddy的进程对应
+          "path": "/dev/shm/naiveh2.sock" //与naive&h2的进程对应
         }
       }
     },
