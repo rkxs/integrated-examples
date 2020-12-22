@@ -112,7 +112,8 @@
           }],
           "automatic_https": {
             "disable_redirects": true //禁用自动http->https重定向
-          }
+          },
+          "experimental_http3": false //关闭http3 server支持。采用v2ray SNI分流，不支持UDP。
         }
       }
     },
