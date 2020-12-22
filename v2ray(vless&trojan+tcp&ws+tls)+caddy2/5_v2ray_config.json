@@ -21,8 +21,7 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 8443, //监听端口
+      "listen": "/dev/shm/vless.sock", //vless+tcp进程
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -100,8 +99,7 @@
       }
     },
     {
-      "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2006, //监听端口
+      "listen": "/dev/shm/trojan.sock", //trojan+tcp进程
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -180,15 +178,21 @@
     {
       "tag": "zv", //标签，与routing中标签对应。
       "protocol": "freedom",
-      "settings": {
-        "redirect": "127.0.0.1:8443" //与vless+tcp端口对应
+      "streamSettings": {
+        "network": "domainsocket",
+        "dsSettings": {
+          "path": "/dev/shm/vless.sock" //与分流的进程对应
+        }
       }
     },
     {
       "tag": "zt", //标签，与routing中标签对应。
       "protocol": "freedom",
-      "settings": {
-        "redirect": "127.0.0.1:2006" //与trojan+tcp端口对应
+      "streamSettings": {
+        "network": "domainsocket",
+        "dsSettings": {
+          "path": "/dev/shm/trojan.sock" //与分流的进程对应
+        }
       }
     },
     {
