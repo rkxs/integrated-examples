@@ -181,7 +181,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/vless.sock" //与分流的进程对应
+          "path": "/dev/shm/vless.sock" //与vless+tcp的进程对应
         }
       }
     },
@@ -191,7 +191,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/trojan.sock" //与分流的进程对应
+          "path": "/dev/shm/trojan.sock" //与trojan+tcp的进程对应
         }
       }
     },
