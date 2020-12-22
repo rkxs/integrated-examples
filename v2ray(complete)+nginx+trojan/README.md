@@ -1,6 +1,6 @@
 介绍：
 
-此配置包括 v2ray 与 trojan（trojan-go）集成。nginx 同时为 vless+tcp 与 trojan（trojan-go）提供 web 回落服务。v2ray 包括如下应用：
+nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 vless+tcp 与 trojan（trojan-go）提供 web 回落服务。v2ray 包括如下应用：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -21,8 +21,8 @@
 
 4、因 v2ray SNI 分流不支持 PROXY protocol（发送），故配置1不启用此项应用。
 
-5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置2不启用此项应用。
+5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用此项应用。
 
-6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故所有配置没有采用进程回落。
+6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；nginx SNI分流针对trojan(trojan-go)端口分流。
 
-7、配置1：v2ray 通过配置相关参数为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外，实现共用443端口。配置2：nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外、实现共用443端口。
+7、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落及进程分流（trojan除外），没有启用 PROXY protocol。
