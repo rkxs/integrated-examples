@@ -21,7 +21,7 @@
       }
     },
     {
-      "listen": "/dev/shm/vless.sock", //vless+tcp监听进程
+      "listen": "/dev/shm/vless.sock", //vless+tcp进程
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "listen": "@vless-ws", //@vless-ws监听进程
+      "listen": "@vless-ws", //@vless-ws进程
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "listen": "/dev/shm/trojan.sock", //trojan+tcp监听进程
+      "listen": "/dev/shm/trojan.sock", //trojan+tcp进程
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -319,7 +319,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/vless.sock" //与vless+tcp的监听进程对应
+          "path": "/dev/shm/vless.sock" //与vless+tcp进程对应
         }
       }
     },
@@ -329,7 +329,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/trojan.sock" //与trojan+tcp的监听进程对应
+          "path": "/dev/shm/trojan.sock" //与trojan+tcp进程对应
         }
       }
     },
@@ -339,7 +339,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/naiveh2.sock" //与naive&h2的监听进程对应
+          "path": "/dev/shm/caddy.sock" //与caddy server进程对应
         }
       }
     },
