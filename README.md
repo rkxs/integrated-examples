@@ -1,7 +1,7 @@
 **这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。示例从低到高部分或全部实现了：端口转发到进程转发、端口回落到进程回落、端口分流到进程分流及PROXY protocol应用支持。**  
 注：  
-1、端口转发、端口回落、端口分流指基于local loopback应用，实现的不同业务功能。  
-2、进程转发、进程回落、端口分流指基于Unix Domain Socket应用，实现的不同业务功能。  
+1.端口转发、端口回落、端口分流指基于local loopback应用，实现的不同业务功能。  
+2.进程转发、进程回落、端口分流指基于Unix Domain Socket应用，实现的不同业务功能。  
 
 ### 单一应用服务器端配置示例
 1. [v2ray(vless\vmess+kcp+seed)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bkcp%2Bseed)) （vless或vmess的kcp应用。若网络极差，推荐部署。）  
