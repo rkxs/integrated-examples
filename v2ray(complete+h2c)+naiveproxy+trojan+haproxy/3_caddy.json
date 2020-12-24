@@ -90,9 +90,6 @@
                   "handler": "reverse_proxy",
                   "transport": {
                     "protocol": "http",
-                    "keep_alive": {
-                      "enabled": false
-                    },
                     "versions": ["h2c"]
                   },
                   "upstreams": [{
