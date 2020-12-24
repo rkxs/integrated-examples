@@ -18,4 +18,6 @@
 
 3、nginx 不支持 h2c proxy，故不能用 nginx 来实现 v2ray 的 h2（http/2）反向代理。
 
-4、协议 vless 或 vmess 采用 WebSocket 传输方式支持 Unix domain socket 转发，故配置1：全部端口转发。配置2：vless+ws进程转发，其它端口转发。
+4、协议 vless 或 vmess 采用 WebSocket 传输方式支持 Unix domain socket 转发，即进程转发。
+
+5、配置1：全部端口转发。配置2：vless+ws进程转发，其它端口转发。
