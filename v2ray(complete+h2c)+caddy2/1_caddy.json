@@ -41,10 +41,7 @@
                 "handle": [{
                   "handler": "reverse_proxy",
                   "transport": {
-                    "protocol": "http",
-                    "keep_alive": {
-                      "enabled": false
-                    },
+                    "protocol": "http"
                     "versions": ["h2c"]
                   },
                   "upstreams": [{
