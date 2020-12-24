@@ -15,3 +15,7 @@
 3、此示例中若采用 caddy2 反向代理，Caddyfile 配置与 caddy.json 配置二选一（效果一样）。支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
 
 4、此示例中若采用 nginx 反向代理，如果系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
+
+5、协议 trojan 采用 WebSocket 传输方式支持 Unix domain socket 转发，即进程转发。
+
+6、配置1：端口转发。配置2：进程转发。
