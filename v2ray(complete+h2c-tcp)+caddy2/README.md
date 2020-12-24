@@ -17,3 +17,5 @@
 2、caddy2 的 Caddyfile 配置与 caddy.json 配置二选一（效果一样）。支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
 
 3、nginx 不支持 h2c proxy，故不能用 nginx 来实现 v2ray 的 h2（http/2）反向代理。
+
+4、配置1：全部端口转发。配置2：vless+ws进程转发，其它端口转发。
