@@ -4,11 +4,7 @@
 
 原理图： v2ray client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
-包括应用如下：
-
-1、vless+ws+tls（tls由caddy2或nginx提供及处理。）
-
-2、vmess+ws+tls（tls由caddy2或nginx提供及处理。）
+包括vless+ws+tls与vmess+ws+tls两类应用。
 
 注意：
 
