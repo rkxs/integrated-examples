@@ -19,3 +19,7 @@
 2、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、ws（WebSocket）与 h2（http/2）反向代理。
 
 3、caddy2 配置支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
+
+4、协议 vless 或 vmess 采用 WebSocket 传输方式支持 Unix domain socket 转发，即进程转发。
+
+5、配置1：全部端口转发。配置2：vless+ws进程转发，其它端口转发。
