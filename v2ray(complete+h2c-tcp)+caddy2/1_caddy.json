@@ -23,7 +23,7 @@
               "handler": "subroute",
               "routes": [{
                 "match": [{
-                  "path": ["/HALdGZ9k"], //分流出ws,与本机v2ray ws path对应。
+                  "path": ["/HALdGZ9k"], //分流出ws,与本机vless ws path对应。
                   "header": {
                     "Connection": ["*Upgrade*"],
                     "Upgrade": ["websocket"]
@@ -35,7 +35,7 @@
                     "protocol": "http"
                   },
                   "upstreams": [{
-                    "dial": "127.0.0.1:2001" //转发给本机v2ray ws对应端口
+                    "dial": "127.0.0.1:2001" //转发给本机vless ws对应端口
                   }]
                 }],
                 "terminal": true
@@ -51,10 +51,7 @@
                 "handle": [{
                   "handler": "reverse_proxy",
                   "transport": {
-                    "protocol": "http",
-                    "keep_alive": {
-                      "enabled": false
-                    }
+                    "protocol": "http"
                   },
                   "upstreams": [{
                     "dial": "127.0.0.1:2002" //转发给本机shadowsocks ws对应端口
@@ -64,19 +61,16 @@
               },
               {
                 "match": [{
-                  "path": ["/SeuW56Es"] //分流出h2,与本机v2ray h2 path对应。
+                  "path": ["/SeuW56Es"] //分流出h2,与本机vless h2 path对应。
                 }],
                 "handle": [{
                   "handler": "reverse_proxy",
                   "transport": {
                     "protocol": "http",
-                    "keep_alive": {
-                      "enabled": false
-                    },
                     "versions": ["h2c"]
                   },
                   "upstreams": [{
-                    "dial": "127.0.0.1:2005" //转发给本机v2ray h2对应端口
+                    "dial": "127.0.0.1:2005" //转发给本机vless h2对应端口
                   }]
                 }],
                 "terminal": true
