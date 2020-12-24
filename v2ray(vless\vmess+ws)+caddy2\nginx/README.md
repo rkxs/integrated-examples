@@ -4,6 +4,12 @@
 
 原理图： v2ray client <------ ws+tls ------> caddy2\nginx <- ws -> v2ray server
 
+包括应用如下：
+
+1、vless+ws+tls（tls由caddy2或nginx提供及处理。）
+
+2、vmess+ws+tls（tls由caddy2或nginx提供及处理。）
+
 注意：
 
 1、此示例中若采用 caddy2 反向代理，Caddyfile 配置与 caddy.json 配置二选一（效果一样）。支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
