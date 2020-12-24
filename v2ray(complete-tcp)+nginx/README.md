@@ -13,3 +13,7 @@
 1、nginx 不支持 h2c proxy，故 nginx 不能实现 v2ray 的 h2（http/2）反向代理。
 
 2、若系统版本过低，其对应发行版仓库自带 nginx 预编译程序包可能不支持 tls1.3；如需要支持 tls1.3，必须先升级 OpenSSl 版本大于 1.1.1，再进行 nginx 源代码编译和安装。
+
+3、协议 vless 或 vmess 采用 WebSocket 传输方式支持 Unix domain socket 转发，即进程转发。
+
+4、配置1：全部端口转发。配置2：vless+ws进程转发，其它端口转发。
