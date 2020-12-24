@@ -23,7 +23,7 @@
               "handler": "subroute",
               "routes": [{
                 "match": [{
-                  "path": ["/HALdGZ9k"], //分流出ws,与本机vless ws path对应。
+                  "path": ["/HALdGZ9k"], //与本机vless ws path对应,分流出ws。
                   "header": {
                     "Connection": ["*Upgrade*"],
                     "Upgrade": ["websocket"]
@@ -42,7 +42,7 @@
               },
               {
                 "match": [{
-                  "path": ["/ss1v2ray"], //分流出ws,与本机shadowsocks ws path对应。
+                  "path": ["/ss1v2ray"], //与本机shadowsocks ws path对应,分流出ws。
                   "header": {
                     "Connection": ["*Upgrade*"],
                     "Upgrade": ["websocket"]
@@ -61,7 +61,7 @@
               },
               {
                 "match": [{
-                  "path": ["/SeuW56Es"] //分流出h2,与本机vless h2 path对应。
+                  "path": ["/SeuW56Es"] //与本机vless h2 path对应,分流出h2。
                 }],
                 "handle": [{
                   "handler": "reverse_proxy",
