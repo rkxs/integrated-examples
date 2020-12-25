@@ -1,4 +1,4 @@
-nginx SNI 分流优化共用443端口
+nginx SNI 分流共用443端口
 
 利用 nginx 支持 SNI 分流特性，对 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，回落给 nginx。trojan+tcp 以 h2 协商连接，也回落给 nginx。另 caddy2 同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
@@ -30,4 +30,4 @@ nginx SNI 分流优化共用443端口
 
 7、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2（http/2）反向代理的应用。
 
-8、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及进程分流，启用了 PROXY protocol。
+8、配置1：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及进程 nginx SNI 的分流，启用了 PROXY protocol。
