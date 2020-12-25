@@ -186,7 +186,7 @@
       "settings": {}
     },
     {
-      "tag": "ss1redirect", //标签，与routing中标签对应。
+      "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
       "settings": {
         "redirect": "127.0.0.1:2003" //此端口必须与上边2003端口对应
