@@ -42,4 +42,4 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行端口分流（�
 
 4、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
-5、配置4：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及进程分流，没有启用 PROXY protocol。
+5、配置4：端口转发、端口回落及 v2ray SNI 端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及 v2ray SNI 进程分流，没有启用 PROXY protocol。
