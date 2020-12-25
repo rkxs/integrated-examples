@@ -60,7 +60,7 @@
     },
     {
       "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
-      "port": 2003, //此端口无实际用处，但必须存在。
+      "port": 2003, //此端口必须与下边"redirect"参数中端口对应
       "protocol": "shadowsocks",
       "settings": {
         "email": "2003@gmail.com",
@@ -68,14 +68,6 @@
         "password": "diy9125", //修改成自己的密码
         "ota": false,
         "network": "tcp,udp"
-      },
-      "streamSettings": {
-        "network": "domainsocket",
-        "security": "none",
-        "dsSettings": {
-          "path": "ss1", //与outbounds中对应
-          "abstract": true
-        }
       }
     },
     {
@@ -165,12 +157,8 @@
     {
       "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "ss1", //与streamSettings中对应
-          "abstract": true
-        }
+      "settings": {
+        "redirect": "127.0.0.1:2003" //此端口必须与上边2003端口对应
       }
     },
     {
