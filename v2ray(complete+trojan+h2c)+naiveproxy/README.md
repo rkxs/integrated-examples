@@ -1,6 +1,6 @@
 介绍：
 
-v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、 naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+v2ray 通过配置相关参数对 vless+tcp、trojan+tcp、 naiveproxy(caddy2) 进行端口或进程分流（四层转发），实现共用443端口。另 caddy2 同时为 vless+tcp 与 trojan+tcp 提供回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -32,4 +32,4 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 7、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
-8、配置1：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及进程分流，没有启用 PROXY protocol。
+8、配置1：端口转发、端口回落及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及 v2ray SNI 的进程分流，没有启用 PROXY protocol。
