@@ -1,4 +1,4 @@
-一、回落终极部署（配置1/配置2/配置3套娃方式）
+一、回落终极部署/套娃方式（配置1/配置2/配置3）
 
 v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 http/1.1 连接直接回落给 nginx，而余下的 h2 连接回落给 trojan+tcp，trojan+tcp 处理后再回落给 nginx。其应用如下：
 
@@ -44,4 +44,4 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 5、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 与 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-6、配置4：端口转发、端口回落及端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落及进程分流，启用了 PROXY protocol。
+6、配置4：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落及 nginx SNI 的进程分流，启用了 PROXY protocol。
