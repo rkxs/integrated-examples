@@ -98,7 +98,7 @@
       "protocol": "dokodemo-door",
       "settings": {
         "address": "v1.mux.cool",
-        "network": "tcp",
+        "network": "tcp,udp",
         "followRedirect": false
       },
       "streamSettings": {
@@ -109,7 +109,7 @@
           "path": "/SS1v2ray" //修改成自己的path
         }
       },
-      "tag": "ss1ws", //标签，与routing中标签对应。
+      "tag": "ddws", //标签，与routing中标签对应。
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -125,7 +125,7 @@
       "settings": {
         "email": "2003@gmail.com",
         "method": "chacha20-poly1305",
-        "password": "diy9125", //修改成自己的密码
+        "password": "diy2003", //修改成自己的密码
         "ota": false,
         "network": "tcp,udp"
       },
@@ -133,11 +133,11 @@
         "network": "domainsocket",
         "security": "none",
         "dsSettings": {
-          "path": "ss1", //与outbounds中对应
+          "path": "ss", //domainsocket文件路径，与outbounds中对应。
           "abstract": true
         }
       }
-    },
+    }
     {
       "listen": "127.0.0.1", //只监听本机，避免本机外的机器探测到下面端口。
       "port": 2005, //监听端口，此端口收发caddy2转来的数据。
@@ -204,9 +204,9 @@
       {
         "type": "field",
         "inboundTag": [
-          "ss1ws" //与inbounds中标签对应
+          "ddws" //与inbounds中标签对应
         ],
-        "outboundTag": "ss1mux" //与outbounds中标签对应
+        "outboundTag": "ssds" //与outbounds中标签对应
       },
       {
         "type": "field",
@@ -223,12 +223,12 @@
       "settings": {}
     },
     {
-      "tag": "ss1mux", //标签，与routing中标签对应。
+      "tag": "ssds", //标签，与routing中标签对应。
       "protocol": "freedom",
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "ss1", //与streamSettings中对应
+          "path": "ss", //domainsocket文件路径，与streamSettings中对应。
           "abstract": true
         }
       }
