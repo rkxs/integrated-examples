@@ -45,7 +45,7 @@
         "network": "domainsocket",
         "security": "none",
         "dsSettings": {
-          "path": "ss", //Unix Domain Socket应用，与outbounds中对应。
+          "path": "ss", //domainsocket文件路径，与outbounds中对应。
           "abstract": true
         }
       }
@@ -81,7 +81,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "ss", //Unix Domain Socket应用，与streamSettings中对应。
+          "path": "ss", //domainsocket文件路径，与streamSettings中对应。
           "abstract": true
         }
       }
