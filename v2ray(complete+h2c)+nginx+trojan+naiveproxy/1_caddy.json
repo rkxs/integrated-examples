@@ -78,7 +78,8 @@
           }],
           "automatic_https": {
             "disable_redirects": true //禁用自动http->https重定向
-          }
+          },
+          "experimental_http3": true //开启http3 server支持
         }
       }
     },
