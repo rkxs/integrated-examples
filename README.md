@@ -21,7 +21,7 @@
 
 ### 综合应用服务器端配置示例
 #### &emsp;v2ray或Xray为主、caddy2为辅及其它应用。
-1. [v2ray(complete+h2c-tcp)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bcaddy2%5Cnaiveproxy) （caddy2反向代理WebSocket与http/2的综合应用；之前推荐部署。\+naiveproxy应用。）  
+1. [v2ray(complete+h2c-tcp)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bcaddy2%5Cnaiveproxy) （caddy2反向代理WebSocket与http/2的综合应用\ +naiveproxy应用。）  
 ---
 1. [v2ray(vless+tcp&ws+tls)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bcaddy2) （推荐部署，同时支持vless+tcp与WebSocket类应用，web回落给caddy2。）  
 2. [v2ray(vless+tcp&ws+tls)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnaiveproxy) （上一项应用+naiveproxy应用。）  
@@ -33,7 +33,7 @@
 2. [v2ray(complete+trojan+h2c)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy) （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
 3. [v2ray(complete+trojan+h2c)+naiveproxy+haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bhaproxy) （用haproxy对上一项应用进行SNI分流，共用端口。）  
 #### &emsp;v2ray或Xray为主、nginx为辅及其它应用。  
-1. [v2ray(complete-tcp)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete-tcp)%2Bnginx) （nginx反向代理WebSocket的综合应用；之前推荐部署。）  
+1. [v2ray(complete-tcp)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete-tcp)%2Bnginx) （nginx反向代理WebSocket的综合应用。）  
 ---
 1. [v2ray(vless+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnginx) （推荐部署，同时支持vless+tcp与WebSocket类应用，web回落给nginx。）  
 2. [v2ray(complete)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx) （v2ray或Xray综合应用。）  
