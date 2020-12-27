@@ -41,8 +41,6 @@
 ---
 1. [v2ray(vless&trojan+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%26trojan%2Btcp%26ws%2Btls)%2Bnginx) （回落终极部署/套娃方式，或共用端口。）  
 2. [v2ray(complete+trojan+h2c)+nginx+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnginx%2Bnaiveproxy) （v2ray或Xray全部应用+naiveproxy应用及共用端口。）  
-#### &emsp;trojan或trojan-go为主、naiveproxy为辅应用。
-1. [trojan\trojan-go+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnaiveproxy) （trojan或trojan-go应用+naiveproxy应用。）  
 
 ### 以上所有实例（含单一与综合示例）注意:
 1. 所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
