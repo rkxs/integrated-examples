@@ -35,7 +35,7 @@
 #### &emsp;v2ray或Xray为主、nginx为辅及其它应用。  
 1. [v2ray(complete-tcp)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete-tcp)%2Bnginx) （nginx反向代理WS的综合应用。）  
 ---
-1. [v2ray(vless+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnginx) （推荐部署，同时支持vless+tcp与WebSocket类应用，WEB回落给nginx。）  
+1. [v2ray(vless+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnginx) （推荐部署，同时支持vless+tcp与WS类应用，WEB回落给nginx。）  
 2. [v2ray(complete)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx) （v2ray或Xray综合应用。）  
 3. [v2ray(complete)+nginx+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx%2Btrojan) （上一项应用+trojan应用及共用端口。）  
 4. [v2ray(complete+h2c)+nginx+trojan+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnginx%2Btrojan%2Bnaiveproxy) （上一项应用+naiveproxy+反向代理H2应用及共用端口。）  
