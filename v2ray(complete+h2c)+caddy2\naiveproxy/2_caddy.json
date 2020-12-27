@@ -60,7 +60,6 @@
             }],
             "terminal": true
           }],
-          "experimental_http3": false, //关闭http3 server支持。采用进程转发，目前不支持UDP。
           "allow_h2c": true //开启h2c server支持
         },
         "srv1": {
