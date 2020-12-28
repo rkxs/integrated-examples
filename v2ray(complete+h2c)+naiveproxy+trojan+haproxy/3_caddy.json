@@ -116,7 +116,7 @@
           "automatic_https": {
             "disable_redirects": true //禁用自己自动http->https重定向
           },
-          "experimental_http3": false //关闭http3 server支持。如采用haproxy分流及进程转发，目前都不支持UDP。
+          "experimental_http3": false //关闭http3 server支持。目前采用进程监听（server进程）无法启动。
         }
       }
     },
