@@ -4,7 +4,7 @@ v2ray 前置（监听443端口），利用 vless+tcp 强大的回落/分流特�
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加其它ws类应用，参考反向代理ws类的单一示例。）
 
 3、naiveproxy （带有forwardproxy插件的caddy2才支持naiveproxy应用，否则仅上边应用。tls由vless+tcp+tls提供及处理，不需配置。。）
 
