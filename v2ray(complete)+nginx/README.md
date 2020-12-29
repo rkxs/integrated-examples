@@ -6,7 +6,7 @@
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
 
-3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
+3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置。）
 
 4、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
 
