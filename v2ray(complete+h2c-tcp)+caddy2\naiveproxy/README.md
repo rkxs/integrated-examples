@@ -4,7 +4,7 @@
   
 1、vless+ws+tls（tls由caddy2提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
 
-2、SS+v2ray-plugin+tls（tls由caddy2提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
+2、SS+v2ray-plugin+tls（tls由caddy2提供及处理，不需配置。）
 
 3、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
 
