@@ -1,7 +1,7 @@
 **这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。**  
-1. 示例全部或部分实现了：端口转发到进程转发及PROXY protocol的从低到高（效能）应用支持。  
-2. 示例全部或部分实现了：端口回落到进程回落及PROXY protocol的从低到高（效能）应用支持。  
-3. 示例全部或部分实现了：端口分流到进程分流及PROXY protocol的从低到高（效能）应用支持。  
+1. 示例实现了：端口转发到进程转发及PROXY protocol的从低到高（效能）应用支持。  
+2. 示例实现了：端口回落到进程回落及PROXY protocol的从低到高（效能）应用支持。  
+3. 示例实现了：端口分流到进程分流及PROXY protocol的从低到高（效能）应用支持。  
 4. nginx分流实现了tcp/udp分流，为fullcone应用提供了基础。  
 5. naiveproxy除进程监听（server进程）外，支持http/3应用，即quic协议传输。
 6. 除v2ray(vless\vmess+kcp+seed)示例外，回落或反代网站都支持http自动跳转到https，且SSL/TLS安全评估报告为A+。  
