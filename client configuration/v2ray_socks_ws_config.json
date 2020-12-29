@@ -18,11 +18,11 @@
   "outbounds": [
     {
       "protocol": "socks",
-      "settings":{
-        "servers":[
+      "settings": {
+        "servers": [
           {
-            "address":"xx.yy", //改成服务端配置的对应域名
-            "port":443 //改成服务端配置的对应端口（如没有使用SNI分流共用端口，回落就是vless+tcp监听端口、反代就是caddy2或nginx等https监听端口。）
+            "address": "xx.yy", //改成服务端配置的对应域名
+            "port": 443 //改成服务端配置的对应端口（如没有使用SNI分流共用端口，回落就是vless+tcp监听端口、反代就是caddy2或nginx等https监听端口。）
           }
         ]
       },
