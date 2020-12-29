@@ -5,7 +5,7 @@
 4. nginx SNI分流实现了tcp/udp分流，为fullcone应用提供了基础。
 5. 除进程监听（server进程）外,naiveproxy实现了：支持http/3应用，即quic协议传输。
 6. 除v2ray(vless\vmess+kcp+seed)示例外， 示例实现了：回落或反代网站都支持http自动跳转到https，且SSL/TLS安全评估报告为A+。
-**注：** 端口转发、端口回落、端口分流指基于local loopback应用，实现的不同业务功能；进程转发、进程回落、进程分流指基于Unix Domain Socket应用，实现的不同业务功能。
+* **注：** 端口转发、端口回落、端口分流指基于local loopback应用，实现的不同业务功能；进程转发、进程回落、进程分流指基于Unix Domain Socket应用，实现的不同业务功能。
 
 ### 单一应用服务器端配置示例
 1. [v2ray(vless\vmess+kcp+seed)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bkcp%2Bseed)) （vless或vmess的kcp应用。若网络极差，推荐部署。）  
