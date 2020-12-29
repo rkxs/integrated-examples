@@ -10,7 +10,7 @@
 
 4、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
 
-5、naiveproxy （带有forwardproxy插件的caddy2才有naiveproxy应用，否则仅上边应用。tls由caddy2提供及处理。）
+5、naiveproxy （带有forwardproxy插件的caddy2才支持naiveproxy应用，否则仅上边应用。tls由caddy2提供及处理。）
 
 注意：
 
