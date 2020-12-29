@@ -2,9 +2,9 @@
 
 除 v2ray kcp 外，所用应用共用443端口。此端口由 caddy2 监听（即 caddy2 前置），反向代理 v2ray 或 Xray 的 ws（WebSocket） 与 h2（http/2），若有 naiveproxy 就进行正向代理。包括应用如下：
   
-1、vless+ws+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
+1、vless+ws+tls（tls由caddy2提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
 
-2、SS+v2ray-plugin+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vless+ws+tls、vmess+ws+tls、trojan+ws+tls应用。）
+2、SS+v2ray-plugin+tls（tls由caddy2提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
 
 3、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
 
