@@ -4,7 +4,7 @@
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加任何WebSocket类应用。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改或添加WebSocket类应用，配置参考对WebSocket反向代理的单一示例。）
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置。）
 
