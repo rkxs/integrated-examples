@@ -1,0 +1,7 @@
+//SS+v2ray-plugin为shadowsocks+v2ray-plugin简写。它仅兼容shadowsocks客户端的WebSocket应用，即只能使用shadowsocks客户端配合v2ray-plugin插件使用。配置如下：
+server address 'xx.yy' //改成服务端配置的对应域名
+server port '443' //改成服务端配置的对应端口（如没有SNI分流共用端口；回落就是vless+tcp监听端口，反代就是caddy2或nginx等https监听端口。）
+server password 'diy2003' //修改成自己的密码
+server method 'chacha20-ietf-poly1305'
+server plugin 'v2ray-plugin' //启用v2ray-plugin插件
+server plugin_opts 'tls;host=xx.yy;path=/SS1v2ray;mux=4' //v2ray-plugin插件参数，修改为与服务器对应。
