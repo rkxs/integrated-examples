@@ -8,7 +8,7 @@
 
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置。）
 
-4、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用。）
+4、vless+h2c+tls（tls由caddy2提供及处理，不需配置；另可改成或添加vmess+h2c+tls应用，参考反向代理h2类的单一示例。）
 
 5、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
 
