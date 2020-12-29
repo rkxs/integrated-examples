@@ -28,7 +28,7 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行 SNI 分流（四
 
 1、vless+tcp+tls（回落/分流配置。）
 
-2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加vmess+ws+tls、SS+v2ray-plugin+tls、trojan+ws+tls应用。）
+2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加其它ws类应用，参考反向代理ws类的单一示例。）
 
 3、trojan+tcp+tls（回落配置。）
 
