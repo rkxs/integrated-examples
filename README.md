@@ -1,11 +1,11 @@
 **这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。**  
 1. 示例实现了端口转发到进程转发及PROXY protocol的从低到高（效能）应用支持。
-2. 示例实现了端口回落到进程回落及PROXY protocol的从低到高（效能）应用支持。
+2. 示例实现了端口回落/分流到进程回落/分流及PROXY protocol的从低到高（效能）应用支持。
 3. 综合应用示例实现了nginx SNI/haproxy SNI/v2ray SNI的端口分流到进程分流及PROXY protocol的从低到高（效能）应用支持。
 4. nginx SNI分流实现了tcp/udp分流，为fullcone应用提供了基础。
 5. naiveproxy除进程监听（server进程）外，实现了支持http/3代理应用，即quic协议传输。
 6. 除v2ray(vless\vmess+kcp+seed)示例外，所有示例实现了回落或反代网站都支持http自动跳转到https，且SSL/TLS安全评估报告为A+。
-* **注：** 端口转发、端口回落、端口分流指基于local loopback应用，实现的不同应用功能；进程转发、进程回落、进程分流指基于Unix Domain Socket应用，实现的不同应用功能。
+* **注：** 端口转发、端口回落/分流、SNI的端口分流指基于local loopback应用，实现的不同应用功能；进程转发、进程回落/分流、SNI的进程分流指基于Unix Domain Socket应用，实现的不同应用功能。
 
 ### 单一应用服务器端配置示例
 1. [v2ray(vless\vmess+kcp+seed)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bkcp%2Bseed)) （vless或vmess的kcp应用。若网络极差，推荐部署。）  
