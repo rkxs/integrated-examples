@@ -20,7 +20,7 @@ v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go)
 
 3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理的应用。
+4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 的应用。
 
 5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），v2ray SNI 分流不支持 PROXY protocol（发送），故所有配置不启用此项应用。
 
