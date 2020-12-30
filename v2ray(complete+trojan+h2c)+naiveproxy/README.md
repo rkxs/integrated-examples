@@ -28,7 +28,7 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 5、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
 
-6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理的应用。
+6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 的应用。
 
 7、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
