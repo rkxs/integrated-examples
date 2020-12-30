@@ -22,6 +22,6 @@
 
 3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2 回落、h2（http/2）反向代理及 PROXY protocol 应用。
+4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 及 PROXY protocol 应用。
 
 5、配置1：端口转发、端口回落，没有启用 PROXY protocol。配置2：进程转发、进程回落，没有启用 PROXY protocol。配置3：进程转发、进程回落，启用了 PROXY protocol。
