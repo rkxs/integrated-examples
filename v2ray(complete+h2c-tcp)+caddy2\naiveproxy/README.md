@@ -18,7 +18,7 @@
 
 2、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy。
 
-3、2、caddy2 的 Caddyfile 配置与 caddy.json 配置二选一（效果一样）。支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
+3、caddy2 的 Caddyfile 配置与 caddy.json 配置二选一（效果一样）。支持自动 https，即自动申请证书与私钥，且自动更新，自动 http 重定向到 https。
 
 4、协议 vless 或 vmess 采用 WebSocket 传输方式支持 Unix domain socket 转发，即进程转发。
 
