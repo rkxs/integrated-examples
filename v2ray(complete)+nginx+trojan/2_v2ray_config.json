@@ -67,7 +67,7 @@
       }
     },
     {
-      "listen": "@vless-ws", //@vless-ws进程
+      "listen": "@vless-ws", //@vless-ws监听进程
       "protocol": "vless",
       "settings": {
         "clients": [
