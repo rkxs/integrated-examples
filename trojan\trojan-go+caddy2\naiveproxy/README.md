@@ -10,7 +10,7 @@
 
 1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
 
-2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），Caddyfile 配置仅支持 http/1.1 server 与 h2c server 共用一个端口。
+2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置不支持进程监听。
 
 3、因 trojan(trojan-go) 不支持 Unix Domain Socket，故不能采用进程回落分流。
 
