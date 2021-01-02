@@ -7,9 +7,9 @@ v2ray client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
 
 注意：
 
-1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
+1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
 
-2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置不支持进程监听。
+2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
 3、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
