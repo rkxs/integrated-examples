@@ -1,0 +1,60 @@
+{
+    admin off
+    auto_https disable_redirects //禁用自己自动http->https重定向
+
+    servers :88 {
+        protocol {
+            allow_h2c //开启h2c server支持
+        }
+    }
+}
+
+:88 { //监听端口
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+    }
+
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    file_server {
+        root /var/www/html //修改为自己存放的web文件路径
+    }
+}
+
+:80 { //http默认监听端口
+    redir https://{host}{uri} permanent //http自动跳转https,让网站看起来更真实。
+}
+
+:7443 {
+    tls /etc/ssl/tls/xx.yy.crt /etc/ssl/tls/xx.yy.key { //换成你的证书与私钥，绝对路径。
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn h2 http/1.1
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+    }
+
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    route {
+        forward_proxy {
+            basic_auth user pass //naiveproxy账号与密码，修改为自己的。
+            hide_ip
+            hide_via
+            probe_resistance unsplash.com:443
+        }
+        reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
+            transport http {
+                versions h2c
+            }
+        }
+        file_server {
+            root /var/www/html //修改成自己存放的web文件路径
+        }
+    }
+}
