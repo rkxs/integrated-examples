@@ -14,7 +14,7 @@
 
 注意：
 
-1、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
+1、caddy2 Caddyfile 配置不支持进程监听。
 
 2、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy。
 
