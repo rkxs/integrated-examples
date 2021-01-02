@@ -1,0 +1,27 @@
+{
+    admin off
+
+    servers :88 {
+        protocol {
+            allow_h2c //开启h2c server支持
+        }
+    }
+}
+
+:88 { //监听端口
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+    }
+
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    file_server {
+        root /var/www/html //修改成自己存放的web文件路径
+    }
+}
+
+:80 { //http默认监听端口
+    redir https://{host}{uri} permanent //http自动跳转https,让网站看起来更真实。
+}
