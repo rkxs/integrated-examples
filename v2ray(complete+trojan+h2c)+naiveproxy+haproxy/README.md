@@ -20,9 +20,9 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
+2、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
 
-3、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置不支持进程监听。
+3、caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。
 
 4、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
