@@ -36,9 +36,9 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行 SNI 分流（四
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
+2、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
 
-3、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置不支持进程监听。
+3、caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。
 
 4、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
