@@ -26,8 +26,10 @@ nginx SNI 分流共用443端口
 
 5、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-6、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。caddy2 Caddyfile 配置不支持进程监听。
+6、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
 7、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy 的应用。
 
-8、配置1：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及 nginx SNI 的进程分流，启用了 PROXY protocol。
+8、caddy2 Caddyfile 配置不支持进程监听。
+
+9、配置1：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及 nginx SNI 的进程分流，启用了 PROXY protocol。
