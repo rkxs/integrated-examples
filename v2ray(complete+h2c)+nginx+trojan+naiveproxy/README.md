@@ -18,7 +18,7 @@ nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四
 
 2、nginx 预编译程序包不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
+3、caddy2 Caddyfile 配置不支持进程监听。
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy 的应用。
 
