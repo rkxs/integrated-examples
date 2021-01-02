@@ -12,7 +12,7 @@ v2ray 前置（监听443端口），利用 vless+tcp 强大的回落/分流特�
 
 1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
 
-2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），Caddyfile 配置仅支持 http/1.1 server 与 h2c server 共用一个端口。。
+2、caddy2 json 配置才支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置不支持进程监听。
 
 3、使用本人 github 中编译好的 caddy2 文件，才支持 naiveproxy、h2c server 及 PROXY protocol 应用。
 
