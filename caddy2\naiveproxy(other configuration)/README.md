@@ -10,6 +10,8 @@
 
 二、naiveproxy 应用使用 Caddyfile 配置 proxyprotocol 等方法
 
+naive_Caddyfile模板实现了 naiveproxy 应用，开启 PROXY protocol、http/3及 h2c server支持。
+
 1、使用 Caddyfile 启用 h2c server 支持。
 
 2、使用 Caddyfile 启用 http/3 支持。
