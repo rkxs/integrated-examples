@@ -8,7 +8,7 @@
 
 2、也可以用 haproxy 或 v2ray SNI 等分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。v2ray SNI 配置示例参考 ‘v2ray(other configuration)’ 中 SNI_config.json 配置。
 
-二、naiveproxy 应用使用 Caddyfile 配置 proxyprotocol 方法
+二、naiveproxy 应用使用 Caddyfile 配置 proxyprotocol 等方法
 
 1、使用 Caddyfile 启用 h2c server 支持。
 
