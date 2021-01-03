@@ -10,7 +10,7 @@
 
 二、naiveproxy 应用使用 Caddyfile 配置 proxyprotocol 等方法
 
-naive_Caddyfile 模板实现了 naiveproxy 应用，开启 PROXY protocol、http/3及 h2c server支持。
+naive_Caddyfile 模板实现了 naiveproxy 应用，开启 PROXY protocol、http/3及 h2c server 支持。
 
 注意：
 
@@ -18,4 +18,4 @@ naive_Caddyfile 模板实现了 naiveproxy 应用，开启 PROXY protocol、http
 
 2、caddy2 Caddyfile 配置不支持进程监听，仅支持端口监听。
 
-3、使用本人 github 中编译好的 caddy2 文件，才支持使用 Caddyfile 配置 proxyprotocol（采用改进的proxyprotocol插件编译的）。
+3、使用本人 github 中编译好的 caddy2 文件（采用改进的proxyprotocol插件编译的），才支持使用 Caddyfile 开启 proxyprotocol 支持。
