@@ -1,6 +1,5 @@
 {
     admin off
-    auto_https disable_redirects //禁用自己自动http->https重定向
 
     servers :443 {
         protocol {
