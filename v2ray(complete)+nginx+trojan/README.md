@@ -19,10 +19,8 @@ nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2
 
 3、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-4、因 v2ray SNI 分流不支持 PROXY protocol（发送），故配置1不启用此项应用。
+4、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用此项应用。
 
-5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用此项应用。
+5、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落。
 
-6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；nginx SNI分流针对trojan(trojan-go)仅端口分流。
-
-7、配置1：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落及 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
+6、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
