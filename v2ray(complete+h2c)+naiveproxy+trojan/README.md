@@ -28,4 +28,4 @@ v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go)
 
 7、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
-8、配置1：端口转发、端口回落及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落及 v2ray SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
+8、配置1：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 v2ray SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
