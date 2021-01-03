@@ -9,7 +9,7 @@
     }
 }
 
-:7443 {
+:7443 { //监听端口，不支持禁用其它机器探测及非安全web访问。可采用其它方式（如防火墙等）来解决。
     tls /etc/ssl/tls/xx.yy.crt /etc/ssl/tls/xx.yy.key { //换成你的证书与私钥，绝对路径。
         ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
         alpn h2 http/1.1
