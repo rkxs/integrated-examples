@@ -12,7 +12,7 @@
 
 2、caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。
 
-3、因 trojan(trojan-go) 不支持 Unix Domain Socket，故不能采用进程回落分流。
+3、因 trojan(trojan-go) 不支持 Unix Domain Socket，故不能采用进程回落。
 
 4、因 trojan(trojan-go) 不支持 PROXY protocol（发送），故不启用此项应用。
 
