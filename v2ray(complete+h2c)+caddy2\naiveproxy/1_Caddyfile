@@ -8,7 +8,7 @@
     }
 }
 
-:88 { //监听端口
+:88 { //监听端口，不支持禁用其它机器探测及非安全web访问。可采用其它方式（如防火墙等）来解决。
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
     }
