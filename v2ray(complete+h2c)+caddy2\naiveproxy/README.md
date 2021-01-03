@@ -24,4 +24,4 @@
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 及 PROXY protocol 应用。
 
-5、配置1：端口转发、端口回落，没有启用 PROXY protocol。配置2：进程转发、进程回落，没有启用 PROXY protocol。配置3：进程转发、进程回落，启用了 PROXY protocol。
+5、配置1：端口转发、端口回落\分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流，启用了 PROXY protocol。
