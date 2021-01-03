@@ -18,10 +18,6 @@ xx.yy { //修改成自己的域名
         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
     }
 
-    log {
-        output file /var/log/caddy/access.log
-    }
-
     route {
         forward_proxy {
             basic_auth user pass //naiveproxy账号与密码，修改为自己的。
