@@ -20,7 +20,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译；或下载本人 github 中编译好的 caddy2 来使用即可。
 
-5、配置1：端口转发、端口回落，没有启用 PROXY protocol。配置2：进程转发、进程回落，没有启用 PROXY protocol。配置3：进程转发、进程回落，启用了 PROXY protocol。
+5、配置1：端口转发、端口回落\分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流，启用了 PROXY protocol。
 
 二、v2ray SNI 分流共用443端口（配置4/配置5）
 
@@ -42,4 +42,4 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行 SNI 分流（四
 
 4、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
-5、配置4：端口转发、端口回落及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落及 v2ray SNI 的进程分流，没有启用 PROXY protocol。
+5、配置4：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 v2ray SNI 的进程分流，没有启用 PROXY protocol。
