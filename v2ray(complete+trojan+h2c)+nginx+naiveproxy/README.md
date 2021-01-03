@@ -32,4 +32,4 @@ nginx SNI 分流共用443端口
 
 8、caddy2 Caddyfile 配置不支持进程监听。
 
-9、配置1：端口转发、端口回落及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落及 nginx SNI 的进程分流，启用了 PROXY protocol。
+9、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流及 nginx SNI 的进程分流，启用了 PROXY protocol。
