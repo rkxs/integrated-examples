@@ -29,8 +29,10 @@
                   "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
                 }
               }
-            },
-            {
+            }]
+          },
+          {
+            "handle": [{
               "handler": "forward_proxy",
               "hide_ip": true,
               "hide_via": true,
