@@ -8,9 +8,6 @@
         "srv0": {
           "listen": [":443"],
           "routes": [{
-            "match": [{
-              "host": ["xx.yy"] //修改成自己的域名
-            }],
             "handle": [{
               "handler": "headers",
               "response": {
@@ -18,8 +15,13 @@
                   "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
                 }
               }
-            },
-            {
+            }]
+          },
+          {
+            "match": [{
+              "host": ["xx.yy"] //修改成自己的域名
+            }],
+            "handle": [{
               "handler": "subroute",
               "routes": [{
                 "match": [{
