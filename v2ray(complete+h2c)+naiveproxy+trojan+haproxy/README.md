@@ -33,3 +33,5 @@
 9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故只能全部端口回落及针对自己端口分流。
 
 10、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（trojan除外）。
+
+11、若采用配置2、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置：把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
