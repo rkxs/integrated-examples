@@ -34,4 +34,4 @@ nginx SNI 分流共用443端口
 
 9、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流及 nginx SNI 的进程分流，启用了 PROXY protocol。
 
-10、若采用配置3又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置，把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
+10、若采用配置3又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置：把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
