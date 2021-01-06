@@ -64,7 +64,7 @@
 &emsp;[官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（使用图形界面客户端仅参考即可。）
 
 ### service configuration  
-&emsp;[程序service配置示例](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置服务由操作系统自动运行。）
+&emsp;[程序service配置示例](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置程序服务由操作系统自动运行。）
 
 ### 使用/贡献指南  
 1. 若程序增加新功能，开始在单一应用服务器端配置示例中添加；过一段时间稳定后才会综合应用服务器端配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
