@@ -6,6 +6,8 @@
 
 2、naiveproxy （带有forwardproxy插件的caddy2才支持naiveproxy应用，否则仅上边应用。tls由trojan(trojan-go)提供及处理，不需配置。）
 
+原理图： trojan\trojan-go client <------ https ------> trojan\trojan-go server <- web回落 -> caddy2\naiveproxy
+
 注意：
 
 1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
