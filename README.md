@@ -61,7 +61,7 @@
 3. [nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流v2ray或Xray应用与网站应用的配置方法。） 
 
 ### client configuration  
-&emsp;[官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（使用图形界面客户端仅参考即可。）
+&emsp;[官方客户端文本配置示例](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（若使用其它客户端参考即可。）
 
 ### service configuration  
 &emsp;[程序service配置示例](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置程序服务由操作系统自动运行。）
