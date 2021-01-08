@@ -10,7 +10,7 @@
 
 3、也可以用 haproxy 或 v2ray SNI 等分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。v2ray SNI 配置示例参考 ‘v2ray(other configuration)’ 中 SNI_redirect_config.json 或 SNI_domainsocket_config.json 配置。
 
-二、naiveproxy 服务端使用 Caddyfile 配置 proxyprotocol 等方法
+二、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法
 
 此 naive_Caddyfile 模板实现了 naiveproxy 应用开启 PROXY protocol、http/3及 h2c server 的支持。
 
@@ -20,4 +20,4 @@
 
 2、caddy2 Caddyfile 配置不支持进程监听，仅支持端口监听。
 
-3、使用本人 github 中编译好的 caddy2 文件（采用改进的proxyprotocol插件编译的），才支持使用 Caddyfile 配置开启 proxyprotocol 支持。
+3、使用本人 github 中编译好的 caddy2 文件（采用改进的proxyprotocol插件编译的），才支持使用 Caddyfile 配置开启 PROXY protocol 支持。
