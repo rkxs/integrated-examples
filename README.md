@@ -52,7 +52,7 @@
 2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。   
 3. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vless+kcp+seed的综合应用。  
 4. 所有ws（WebSocket）类应用支持CDN加速。  
-5. naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本人github下载即可。  
+5. naiveproxy=caddy2+forwardproxy（服务器端）。此程序文件已编译好，本人github下载即可。  
 6. 目前caddy2的Unix Domain Socket应用（即进程回落与进程转发给它），不支持h3；若开启，caddy无法启动。  
 
 ### 特殊应用服务器端配置示例
