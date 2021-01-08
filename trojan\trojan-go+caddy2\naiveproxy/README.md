@@ -18,6 +18,6 @@
 
 4、因 trojan(trojan-go) 不支持 PROXY protocol（发送），故不启用此项应用。
 
-5、使用本人 github 中编译好的 caddy2 文件，才支持 naiveproxy 应用。
+5、使用本人 github 中编译好的 caddy2 文件，才支持 naiveproxy 等应用。
 
 6、trojan-go 使用 go 实现了完全兼容 trojan，还有自己的特色：trojan-go 支持使用多路复用提升并发性能，使用路由模块实现国内直连；支持 CDN 流量中转(基于 WebSocket over TLS/SSL )；支持使用 AEAD 对 trojan 流量二次加密(基于 Shadowsocks AEAD )；支持可插拔的传输层插件，允许替换 TLS，使用其他加密隧道传输 trojan 协议流量。
