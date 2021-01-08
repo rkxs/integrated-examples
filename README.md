@@ -67,5 +67,5 @@
 &emsp;[service configuration](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置程序服务由操作系统自动运行。）
 
 ### 使用/贡献指南  
-1. 若程序增加新功能，开始在单一应用服务端配置示例中添加；过一段时间稳定后才会综合应用服务器端配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
+1. 若程序增加新功能，开始在服务端单一应用配置示例中添加；过一段时间稳定后才会服务端综合应用配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
 2. 欢迎你提交 PR ,如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
