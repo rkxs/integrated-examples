@@ -20,15 +20,15 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。 
 
-2、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
+2、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-3、caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。
+3、caddy2 等于或大于 v2.3.0 版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程（Unix Domain Socket 应用）监听。
 
-4、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
+4、caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-5、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
+5、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
 
-6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 的应用。
+6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 等应用。
 
 7、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
 
