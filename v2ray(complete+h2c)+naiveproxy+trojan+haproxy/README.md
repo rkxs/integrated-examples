@@ -14,15 +14,15 @@
 
 注意：
 
-1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程监听。
+1、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-2、caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用），caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。
+2、caddy2 等于或大于 v2.3.0 版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程（Unix Domain Socket 应用）监听。
 
-3、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
+3、caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-4、caddy2 发行版不支持 PROXY protocol。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
+4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
 
-5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 及 PROXY protocol的应用。
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 h2c server、h2c proxy、naiveproxy 及 PROXY protocol 等应用。
 
 6、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
