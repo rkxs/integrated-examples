@@ -1,6 +1,6 @@
 介绍：
 
-本配置是 trojan 或 trojan-go 应用，以 h2 或 http/1.1 自适应协商连接，非trojan 或 trojan-go 的 https 连接回落给 caddy2；若有 naiveproxy，caddy2 再进行正向代理。其应用如下：
+本配置是 trojan 或 trojan-go 应用，以 h2 或 http/1.1 自适应协商连接，非trojan 或 trojan-go 的 https 连接回落给 caddy2；若有 naiveproxy 应用再进行正向代理。其应用如下：
 
 1、trojan(trojan-go)（回落配置。）
 
