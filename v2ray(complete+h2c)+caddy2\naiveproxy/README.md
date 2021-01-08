@@ -24,6 +24,6 @@
 
 4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
 
-5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 h2c server、h2c proxy、PROXY protocol 及 naiveproxy 应用。
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 h2c server、h2c proxy、PROXY protocol 及 naiveproxy 等应用。
 
 6、配置1：端口转发、端口回落\分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流，启用了 PROXY protocol。
