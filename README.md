@@ -1,4 +1,4 @@
-**这里是主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。**  
+**这里是搭建主流科学上网的优化配置及最优组合示例。如是不太了解科学上网，建议先依次从简单到复杂参考及部署。**  
 1. 示例实现了端口转发到进程转发及PROXY protocol的从低到高（效率）应用支持。
 2. 示例实现了端口回落\分流到进程回落\分流及PROXY protocol的从低到高（效率）应用支持。
 3. 示例实现了nginx SNI/haproxy SNI/v2ray SNI的端口分流到进程分流及PROXY protocol的从低到高（效率）应用支持。
@@ -63,9 +63,9 @@
 ### 官方客户端配置示例  
 &emsp;[client configuration](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（若使用其它客户端参考即可。）
 
-### 程序service配置示例  
-&emsp;[service configuration](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置程序服务由操作系统自动运行。）
+### systemd的服务文件  
+&emsp;[service configuration](https://github.com/lxhao61/integrated-examples/tree/master/service%20configuration)（配置软件服务由systemd管理。）
 
 ### 使用/贡献指南  
-1. 若程序增加新功能，开始在服务端单一应用配置示例中添加；过一段时间稳定后才会服务端综合应用配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
+1. 若科学上网相关软件增加新功能，开始在服务端单一应用配置示例中添加；过一段时间稳定后才会服务端综合应用配置示例中添加。如除trojan+tcp套娃外，vless+tcp及trojan+tcp的xtls已全部加上。  
 2. 欢迎你提交 PR ,如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
