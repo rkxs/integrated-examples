@@ -30,7 +30,7 @@
 
 8、因 trojan(trojan-go) 不支持 PROXY protocol（发送），故 trojan(trojan-go) 的回落不开启 PROXY protocol 支持。
 
-9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 只能端口回落；haproxy 或 nginx SNI 对 trojan(trojan-go) 端口分流。
+9、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 只能端口回落；haproxy 或 nginx SNI 对 trojan(trojan-go) 仅端口分流。
 
 10、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（trojan除外）。
 
