@@ -19,8 +19,21 @@
   "apps": {
     "http": {
       "servers": {
-        "srv0": {
-          "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程
+        "h1": {
+          "listen": [":80"], //http默认监听端口
+          "routes": [{
+            "handle": [{
+              "handler": "static_response",
+              "status_code": "301", 
+              "headers": {
+              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
+              }
+            }],
+            "terminal": true
+          }]
+        },
+        "h1&h2c": {
+          "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程监听，仅接收web回落。
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
@@ -42,19 +55,6 @@
             "terminal": true
           }],
           "allow_h2c": true //开启h2c server支持
-        },
-        "srv1": {
-          "listen": [":80"], //http默认监听端口
-          "routes": [{
-            "handle": [{
-              "handler": "static_response",
-              "status_code": "301", 
-              "headers": {
-              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
-              }
-            }],
-            "terminal": true
-          }]
         }
       }
     }
