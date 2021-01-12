@@ -1,6 +1,6 @@
 {
     admin off
-    servers unix//dev/shm/h1h2c.sock { //与下进程监听对应
+    servers unix//dev/shm/h1h2c.sock { //与下面进程监听对应
         protocol {
             allow_h2c //开启h2c server支持
         }
