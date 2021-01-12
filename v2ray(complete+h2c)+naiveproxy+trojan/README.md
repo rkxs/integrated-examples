@@ -16,16 +16,18 @@ v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go)
 
 1、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-2、caddy2 等于或大于 v2.3.0 版才支持 Caddyfile 配置开启 h2c server，但 caddy2 Caddyfile 配置不支持进程（Unix Domain Socket 应用）监听。
+2、caddy2 等于或大于 v2.3.0 版才支持 Caddyfile 配置开启 h2c server。
 
-3、caddy2 Caddyfile 配置支持 http/1.1 server 与 h2c server 共用一个端口。caddy2 json 配置支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
+3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 等应用。
+4、本示例中 naiveproxy(caddy2) 的 naive_Caddyfile 配置虽然可用，但会产生很多报错日志（暂不能解决）。
 
-5、因 trojan(trojan-go) 不支持 PROXY protocol（接收），v2ray SNI 分流不支持 PROXY protocol（发送），故所有配置不启用此项应用。
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 等应用。
 
-6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；v2ray SNI 对 trojan(trojan-go) 仅端口分流。
+6、因 trojan(trojan-go) 不支持 PROXY protocol（接收），v2ray SNI 分流不支持 PROXY protocol（发送），故所有配置不启用此项应用。
 
-7、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
+7、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；v2ray SNI 对 trojan(trojan-go) 仅端口分流。
 
-8、配置1：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 v2ray SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
+8、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
+
+9、配置1：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 v2ray SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
