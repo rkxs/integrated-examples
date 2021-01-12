@@ -1,22 +1,22 @@
 {
     admin off
-
-    servers :88 {
+    servers 127.0.0.1:88 { //与下边端口监听对应
         protocol {
             allow_h2c //开启h2c server支持
         }
     }
 }
 
-:88 { //监听端口，不支持禁用其它机器探测及非安全web访问。可采用其它方式（如防火墙等）来解决。
-    header {
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
-    }
+:80 { //http默认监听端口
+    redir https://{host}{uri} permanent //http自动跳转https,让网站看起来更真实。
+}
 
+:88 { //监听端口，仅接收web回落。
+    bind 127.0.0.1 //只监听本机，避免本机外的机器探测到上面端口。
     log {
         output file /var/log/caddy/access.log
+        level  ERROR
     }
-
     route {
         forward_proxy {
             basic_auth user pass //naiveproxy账号与密码，修改为自己的。
@@ -29,12 +29,13 @@
                 versions h2c
             }
         }
-        file_server {
-            root /var/www/html //修改成自己存放的web文件路径
+        handle {
+            header {
+                Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+            }
+            file_server {
+                root /var/www/html //修改成自己存放的web文件路径
+            }
         }
     }
-}
-
-:80 { //http默认监听端口
-    redir https://{host}{uri} permanent //http自动跳转https,让网站看起来更真实。
 }
