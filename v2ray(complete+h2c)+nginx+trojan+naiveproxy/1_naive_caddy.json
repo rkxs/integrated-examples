@@ -20,7 +20,7 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:7443"], //本机 https server 端口监听，提供naiveproxy、h2c proxy等应用。
+          "listen": ["127.0.0.1:7443"], //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
