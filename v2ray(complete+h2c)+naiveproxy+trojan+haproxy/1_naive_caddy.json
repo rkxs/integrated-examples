@@ -19,28 +19,7 @@
   "apps": {
     "http": {
       "servers": {
-        "srv0": {
-          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。
-          "routes": [{
-            "handle": [{
-              "handler": "headers",
-              "response": {
-                "set": {
-                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
-                }
-              }
-            }]
-          },
-          {
-            "handle": [{
-              "handler": "file_server",
-              "root": "/var/www/html" //修改为自己存放的web文件路径
-            }],
-            "terminal": true
-          }],
-          "allow_h2c": true //开启h2c server支持
-        },
-        "srv1": {
+        "h1": {
           "listen": [":80"], //http默认监听端口
           "routes": [{
             "handle": [{
@@ -53,8 +32,8 @@
             "terminal": true
           }]
         },
-        "srv2": {
-          "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因SNI分流统一监听端口为443，故此端口改成7443。
+        "h1&h2c": {
+          "listen": ["127.0.0.1:88"], //本机端口监听，避免除本机外的机器探测及非安全web访问，仅接收web回落。
           "routes": [{
             "handle": [{
               "handler": "headers",
@@ -63,9 +42,18 @@
                   "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
                 }
               }
-            }]
-          },
-          {
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
+            }],
+            "terminal": true
+          }],
+          "allow_h2c": true //开启h2c server支持
+        },
+        "https": {
+          "listen": ["127.0.0.1:7443"], //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
+          "routes": [{
             "handle": [{
               "handler": "forward_proxy",
               "hide_ip": true,
@@ -78,53 +66,53 @@
             }]
           },
           {
+            "match": [{
+              "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
+            }],
             "handle": [{
-              "handler": "subroute",
-              "routes": [{
-                "match": [{
-                  "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http",
-                    "versions": ["h2c"]
-                  },
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
-                  }]
-                }],
-                "terminal": true
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
               },
-              {
-                "handle": [{
-                  "handler": "file_server",
-                  "root": "/var/www/html" //修改为自己存放的web文件路径
-                }],
-                "terminal": true
+              "upstreams": [{
+                "dial": "127.0.0.1:2005" //与v2ray h2 端口对应
               }]
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
+                }
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
             }],
             "terminal": true
           }],
           "tls_connection_policies": [{
-            "match": {
-              "sni": ["zc.xx.yy"] //SNI分流对应的caddy域名。若是采用通配符证书，此处域名可设置为通配符域名"*.xx.yy"。
+            "certificate_selection": {
+              "any_tag": ["tls-1"]
             },
-            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "alpn": ["h2","http/1.1"]
           }],
-          "automatic_https": {
-            "disable_redirects": true //禁用自己自动http->https重定向
-          },
-          "experimental_http3": true //开启http3 server支持。若采用haproxy SNI分流，不支持UDP，此项可关闭。
+          "experimental_http3": true //开启http3 server支持
         }
       }
     },
     "tls": {
       "certificates": {
         "load_files": [{
-          "certificate": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
-          "key": "/etc/ssl/tls/xx.yy.key" //换成你的私钥，绝对路径。
+          "certificate": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径。
+          "key": "/etc/ssl/tls/xx.yy.key", // 换成你的私钥，绝对路径。
+          "tags": ["tls-1"]
         }]
       }
     }
