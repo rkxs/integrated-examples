@@ -13,6 +13,6 @@ v2ray client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
 
 3、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。特别提醒：采用改进的 proxyprotocol 插件定制编译，才支持使用 Caddyfile 配置，否则只能使用 json 配置。
 
-4、本示例中 Caddyfile 配置与 caddy.json 配置二选一即可（效果一样）。
+4、本示例中 caddy2 的 Caddyfile 格式配置与 json 格式配置二选一即可（效果一样）。
 
 5、配置1：端口回落，没有启用 PROXY protocol。配置2：进程回落，没有启用 PROXY protocol。配置3：进程回落，启用了 PROXY protocol。
