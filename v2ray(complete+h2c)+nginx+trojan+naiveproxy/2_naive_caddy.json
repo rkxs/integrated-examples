@@ -19,19 +19,9 @@
   "apps": {
     "http": {
       "servers": {
-        "srv0": {
-          "listen": ["unix//dev/shm/caddy.sock"], //caddy server进程
+        "https": {
+          "listen": ["unix//dev/shm/caddy.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
           "routes": [{
-            "handle": [{
-              "handler": "headers",
-              "response": {
-                "set": {
-                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
-                }
-              }
-            }]
-          },
-          {
             "handle": [{
               "handler": "forward_proxy",
               "hide_ip": true,
@@ -44,46 +34,44 @@
             }]
           },
           {
+            "match": [{
+              "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
+            }],
             "handle": [{
-              "handler": "subroute",
-              "routes": [{
-                "match": [{
-                  "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http",
-                    "versions": ["h2c"]
-                  },
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2005" //与v2ray h2 端口对应
-                  }]
-                }],
-                "terminal": true
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
               },
-              {
-                "handle": [{
-                  "handler": "file_server",
-                  "root": "/var/www/html" //修改为自己存放的web文件路径
-                }],
-                "terminal": true
+              "upstreams": [{
+                "dial": "127.0.0.1:2005" //与v2ray h2 端口对应
               }]
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
+                }
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
             }],
             "terminal": true
           }],
           "tls_connection_policies": [{
-            "match": {
-              "sni": ["zc.xx.yy"] //SNI分流对应的caddy域名。若是采用通配符证书，此处域名可设置为通配符域名"*.xx.yy"。
+            "certificate_selection": {
+              "any_tag": ["tls-1"]
             },
             "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
-            "curves": ["x25519"],
             "alpn": ["h2","http/1.1"]
           }],
-          "automatic_https": {
-            "disable_redirects": true //禁用自动http->https重定向
-          },
-          "experimental_http3": false //关闭http3 server支持。目前采用进程监听（server进程）无法启动。
+          "experimental_http3": true //开启http3 server支持
         }
       }
     },
@@ -91,7 +79,8 @@
       "certificates": {
         "load_files": [{
           "certificate": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径。
-          "key": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径。
+          "key": "/etc/ssl/tls/xx.yy.key", // 换成你的私钥，绝对路径。
+          "tags": ["tls-1"]
         }]
       }
     }
