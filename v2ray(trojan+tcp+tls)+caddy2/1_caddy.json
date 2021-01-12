@@ -40,7 +40,7 @@
               "response": {
                 "set": {
                   "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
-               }
+                }
               }
             },
             {
