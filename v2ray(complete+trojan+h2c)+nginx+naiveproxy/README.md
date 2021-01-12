@@ -26,11 +26,11 @@ nginx SNI 分流共用443端口
 
 5、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
 
-6、caddy2 Caddyfile 配置不支持进程（Unix Domain Socket 应用）监听。
+6、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。特别提醒：采用改进的 proxyprotocol 插件定制编译，才支持使用 Caddyfile 配置，否则只能使用 json 配置。
 
-7、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译。
+7、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy 及 PROXY protocol 等应用。
 
-8、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy 及 PROXY protocol 等应用。
+8、本示例中 naiveproxy(caddy2) 的 naive_Caddyfile 配置虽然可用，但会产生很多报错日志（暂不能解决）。
 
 9、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流及 nginx SNI 的进程分流，启用了 PROXY protocol。
 
