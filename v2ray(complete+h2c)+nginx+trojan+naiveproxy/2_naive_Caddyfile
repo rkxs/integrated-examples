@@ -1,0 +1,37 @@
+{
+    admin off
+    servers unix//dev/shm/caddy.sock { //与下边进程监听对应
+        protocol {
+            experimental_http3 //开启http3 server支持
+        }
+    }
+}
+
+:7443 { //启用进程绑定后此端口失效，仅做标记作用。
+    bind unix//dev/shm/caddy.sock //启用端口与进程绑定，执行https server进程监听,提供naiveproxy、h2c proxy等应用。
+    tls /etc/ssl/tls/xx.yy.crt /etc/ssl/tls/xx.yy.key { //换成你的证书与私钥，绝对路径。
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn h2 http/1.1
+    }
+    route {
+        forward_proxy {
+            basic_auth user pass //naiveproxy账号与密码，修改为自己的。
+            hide_ip
+            hide_via
+            probe_resistance unsplash.com:443
+        }
+        reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
+            transport http {
+                versions h2c
+            }
+        }
+        handle {
+            header {
+                Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+            }
+            file_server {
+                root /var/www/html //修改成自己存放的web文件路径
+            }
+        }
+    }
+}
