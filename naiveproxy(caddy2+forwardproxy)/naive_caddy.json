@@ -5,7 +5,7 @@
   "apps": {
     "http": {
       "servers": {
-        "srv0": {
+        "https": {
           "listen": [":443"], //监听端口
           "routes": [{
             "handle": [{
