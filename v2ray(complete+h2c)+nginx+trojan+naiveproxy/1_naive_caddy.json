@@ -19,7 +19,7 @@
   "apps": {
     "http": {
       "servers": {
-        "srv0": {
+        "https": {
           "listen": ["127.0.0.1:7443"], //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
           "routes": [{
             "handle": [{
