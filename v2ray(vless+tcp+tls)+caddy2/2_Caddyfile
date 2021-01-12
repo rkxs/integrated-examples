@@ -12,7 +12,7 @@
 }
 
 :88 { //启用进程绑定后此端口失效，仅做标记作用。
-    bind unix//dev/shm/h1h2c.sock //启用端口与进程绑定，执行进程监听，仅接收web回落。
+    bind unix//dev/shm/h1h2c.sock //启用进程绑定，执行进程监听，仅接收web回落。
     log {
         output file /var/log/caddy/access.log
         level  ERROR
