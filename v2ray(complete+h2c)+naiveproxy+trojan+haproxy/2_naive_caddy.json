@@ -33,7 +33,7 @@
           }]
         },
         "h1&h2c": {
-          "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程监听，仅接收web回落。
+          "listen": ["127.0.0.1:88"], //本机端口监听，避免除本机外的机器探测及非安全web访问，仅接收web回落。
           "routes": [{
             "handle": [{
               "handler": "headers",
