@@ -50,7 +50,7 @@
 
 #### 以上所有实例（含单一与综合示例）注意:
 1. 所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
-2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。另外注意：配置示例中log部分的路径名称，需修改为对应的xray或v2ray。   
+2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。   
 3. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vless+kcp+seed的综合应用。  
 4. 所有ws（WebSocket）类应用支持CDN加速。  
 5. naiveproxy=caddy2+forwardproxy（服务端）。此程序文件已编译好，本人github下载即可。  
