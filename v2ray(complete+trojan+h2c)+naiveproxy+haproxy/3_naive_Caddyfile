@@ -40,6 +40,10 @@
         ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
         alpn h2 http/1.1
     }
+    log {
+        output file /var/log/caddy/access.log
+        level  ERROR
+    }
     route {
         forward_proxy {
             basic_auth user pass //naiveproxy账号与密码，修改为自己的。
