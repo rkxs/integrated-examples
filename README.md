@@ -54,7 +54,7 @@
 3. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vless+kcp+seed的综合应用。  
 4. 所有ws（WebSocket）类应用支持CDN加速。  
 5. naiveproxy=caddy2+forwardproxy（服务端）。此程序文件已编译好，本人github下载即可。  
-6. 目前caddy2的Unix Domain Socket应用（即进程回落与进程转发给它），不支持h3；若开启，caddy无法启动。  
+6. 目前caddy2的http/https服务进程监听采用Unix Domain Socket应用不支持h3。若开启h3，caddy无法启动。  
 
 ### 服务端特殊应用配置示例
 1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （v2ray或Xray其它多种特殊应用配置方法。）  
