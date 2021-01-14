@@ -22,7 +22,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 二、nginx SNI 分流共用443端口（配置4/配置5/配置6） 
 
-利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 nginx。trojan+tcp 以 h2 协商连接，非 v2ray 的 web 连接也回落给 nginx。其应用如下：
+利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行 SNI 分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 nginx。trojan+tcp 以 h2 协商连接，非 v2ray 的 web 连接也回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
