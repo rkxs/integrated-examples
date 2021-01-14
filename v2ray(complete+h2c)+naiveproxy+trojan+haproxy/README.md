@@ -28,12 +28,10 @@
 
 7、nginx 预编译程序包一般不带支持 SNI 分流协议的模块。如要使用此项协议应用，需加 stream_ssl_preread_module 模块构建自定义模板，再进行源代码编译和安装。
 
-8、因 trojan(trojan-go) 不支持 PROXY protocol（接收），而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不再使用 nginx。
+8、因 trojan(trojan-go) 不支持 Unix Domain Socket，故对应 trojan(trojan-go)部分仅端口分流与端口回落；从而caddy2 回落监听部分也仅端口监听。另外 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不再使用 nginx。
 
-9、因 trojan(trojan-go) 不支持 PROXY protocol（发送），故 trojan(trojan-go) 的回落不开启 PROXY protocol 支持。
+9、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故对应 trojan(trojan-go)部分不启用此项应用；从而caddy2 回落监听部分也不启用 PROXY protocol 接收。
 
-10、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 只能端口回落；haproxy 或 nginx SNI 对 trojan(trojan-go) 仅端口分流。
+10、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（trojan除外）。
 
-11、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（trojan除外）。
-
-12、若采用配置2、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置：把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
+11、若采用配置2、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置：把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
