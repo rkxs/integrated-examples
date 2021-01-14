@@ -26,7 +26,7 @@
             }],
             "handle": [{
               "handler": "proxy",
-              "proxy_header": "v2", //采用改进的caddy-l4插件编译的才支持PROXY protocol发送，否则此条参数必须删除；或者删除不启用。v1或v2表示PROXY protocol版本，可二选一。
+              "proxy_header": "v2", //采用改进的caddy-l4插件编译的才同时支持PROXY protocol发送。v1或v2表示PROXY protocol版本，SNI分流建议采用v2版。
               "upstreams": [{
                 "dial": ["unix//dev/shm/vless.sock"] //与vless+tcp进程对应
               }]
@@ -40,7 +40,7 @@
             }],
             "handle": [{
               "handler": "proxy",
-              "proxy_header": "v2", //采用改进的caddy-l4插件编译的才支持PROXY protocol发送，否则此条参数必须删除；或者删除不启用。v1或v2表示PROXY protocol版本，可二选一。
+              "proxy_header": "v2", //采用改进的caddy-l4插件编译的才同时支持PROXY protocol发送。v1或v2表示PROXY protocol版本，SNI分流建议采用v2版。
               "upstreams": [{
                 "dial": ["unix//dev/shm/trojan.sock"] //与trojan+tcp进程对应
               }]
