@@ -1,6 +1,6 @@
 介绍：
 
-v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+利用 caddy2 支持 SNI 分流特性，对 v2ray、naiveproxy(caddy2)、trojan(trojan-go) 进行 SNI 分流（四层转发），实现共用443端口。caddy2 同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务，为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -20,14 +20,14 @@ v2ray 通过配置相关参数为 v2ray、naiveproxy(caddy2)、trojan(trojan-go)
 
 3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-4、本示例中 naiveproxy(caddy2) 的 naive_Caddyfile 配置虽然可用，但会产生很多报错日志（暂不能解决）。
+4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。特别提醒：采用改进的 proxyprotocol 插件定制编译，才支持使用 Caddyfile 配置，否则只能使用 json 配置。
 
-5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy 等应用。
+5、caddy2 加 caddy-l4 插件定制编译的才可以实现 SNI 分流，目前仅支持使用 json 配置。特别提醒：采用改进的 caddy-l4 插件定制编译的才同时支持 PROXY protocol（发送），且可以对进程或端口分别开启 PROXY protocol（发送）。
 
-6、因 trojan(trojan-go) 不支持 PROXY protocol（接收），v2ray SNI 分流不支持 PROXY protocol（发送），故所有配置不启用此项应用。
+6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy、caddy-l4 及 PROXY protocol 等应用。
 
-7、因 trojan(trojan-go) 不支持 Unix Domain Socket，故全部端口回落；v2ray SNI 对 trojan(trojan-go) 仅端口分流。
+7、因 trojan(trojan-go) 不支持 PROXY protocol（接收），故 trojan(trojan-go) 所有配置不启用此项应用。
 
-8、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
+8、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 所有配置全部端口回落。
 
-9、配置1：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 v2ray SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
+9、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置6：trojan除外，其它进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
