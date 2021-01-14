@@ -14,6 +14,52 @@
     }
   },
   "apps": {
+    "layer4": { //加了caddy-l4插件编译的才可启用SNI分流
+      "servers": {
+        "example": {
+          "listen": [":443"],
+          "routes": [{
+            "match": [{
+              "tls": {
+                "sni": ["zv.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["unix//dev/shm/vless.sock"] //与vless+tcp进程对应
+              }]
+            }]
+          },
+          {
+            "match": [{
+              "tls": {
+                "sni": ["zt.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["127.0.0.1:2083"] //与trojan端口对应
+              }]
+            }]
+          },
+          {
+            "match": [{
+              "tls": {
+                "sni": ["zc.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["unix//dev/shm/caddy.sock"] //与caddy2 https server进程对应
+              }]
+            }]
+          }]
+        }
+      }
+    },
     "http": {
       "servers": {
         "h1": {
@@ -100,7 +146,7 @@
             "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "alpn": ["h2","http/1.1"]
           }],
-          "experimental_http3": false //关闭http3 server支持。采用v2ray SNI分流，不支持UDP。另外目前采用进程监听（server进程）无法启动。
+          "experimental_http3": false //关闭http3 server支持。目前采用进程监听（server进程）无法启动。
         }
       }
     },
