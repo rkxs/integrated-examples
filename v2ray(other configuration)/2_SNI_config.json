@@ -20,14 +20,14 @@
       {
         "type": "field",
         "domain": [
-          "zv.xx.yy" //修改成自己域名
+          "zv.xx.yy" //修改成自己分流的域名
         ],
         "outboundTag": "zv" //与outbounds中标签对应
       },
       {
         "type": "field",
         "domain": [
-          "zt.xx.yy" //修改成自己域名
+          "zt.xx.yy" //修改成自己分流的域名
         ],
         "outboundTag": "zt" //与outbounds中标签对应
       },
@@ -40,7 +40,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/vless.sock" //与分流的进程对应
+          "path": "/dev/shm/vless.sock" //与应用的进程对应
         }
       }
     },
@@ -50,7 +50,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/dev/shm/trojan.sock" //与分流的进程对应
+          "path": "/dev/shm/trojan.sock" //与应用的进程对应
         }
       }
     },
