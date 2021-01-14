@@ -18,7 +18,7 @@
 
 3、2_SNI_config.json 分流采用 Unix Domain Socket 应用，实现转发进程（域名）的分流，简称 v2ray SNI 的进程分流。此进程分流效率高，但在 Windows 10 Build 17036 前不可用。
 
-4、本人 github 中的相关配置示例已配置 v2ray SNI 分流共用端口 ，此配置方法仅备份及参考等。
+4、v2ray SNI 分流配置示例已被 其它 SNI 分流优势替代 ，此配置方法仅备份及参考（如其它需要采用 v2ray SNI 环境）等。
 
 三、v2ray 流量统计的配置方法
 
