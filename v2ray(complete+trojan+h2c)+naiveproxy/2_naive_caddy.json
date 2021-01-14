@@ -54,7 +54,7 @@
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["unix//dev/shm/trojan.sock"] //与caddy2 https server进程对应
+                "dial": ["unix//dev/shm/caddy.sock"] //与caddy2 https server进程对应
             }]
           }]
         }
