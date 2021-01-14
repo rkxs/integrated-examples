@@ -1,6 +1,6 @@
 nginx SNI 分流共用443端口
 
-利用 nginx 支持 SNI 分流特性，对 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，回落给 nginx。trojan+tcp 以 h2 协商连接，也回落给 nginx。另 caddy2 同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+利用 nginx 支持 SNI 分流特性，对 vless+tcp、trojan+tcp、naiveproxy(caddy2) 进行 SNI 分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，回落给 nginx。trojan+tcp 以 h2 协商连接，也回落给 nginx。另 caddy2 同时为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
