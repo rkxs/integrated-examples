@@ -8,6 +8,8 @@
 
 二、v2ray 或 Xray SNI 分流的配置方法
 
+此方法也可以解决 v2ray（Xray）应用与网站应用（原网站不想做回落网站，或 nginx/caddy2 等有多个网站应用。）共用443端口问题。
+
 注意：
 
 1、v2ray SNI 分流不支持 PROXY protocol（发送）。
