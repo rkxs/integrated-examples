@@ -18,7 +18,7 @@
 
 1、caddy2 加 caddy-l4 插件定制编译的才可以实现 SNI 分流，目前仅支持使用 json 配置。
 
-2、采用改进的 caddy-l4 插件定制编译的才支持 PROXY protocol 发送。
+2、采用改进的 caddy-l4 插件定制编译的才支持 PROXY protocol 发送，且可以分别对进程或端口开启 PROXY protocol 发送。
 
 3、1_SNI_caddy.json 分流采用 local loopback 应用（redirect），实现转发端口（域名）的分流，简称 caddy2 SNI 的端口分流。此端口分流效率稍低，可适用全部服务器。
 
