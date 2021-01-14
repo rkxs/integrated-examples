@@ -24,9 +24,9 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 6、配置1：端口转发、端口回落\分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流，启用了 PROXY protocol。
 
-二、v2ray SNI 分流共用443端口（配置4/配置5）
+二、caddy2 SNI 分流共用443端口（配置4/配置5）
 
-v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行 SNI 分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 caddy2。trojan+tcp 也以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 连接也回落给 caddy2。v2ray 包括应用如下：
+利用 caddy2 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行端口分流（四层转发），实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 caddy2。trojan+tcp 也以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 连接也回落给 caddy2。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -42,8 +42,10 @@ v2ray 通过配置相关参数对 vless+tcp、trojan+tcp 进行 SNI 分流（四
 
 3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-4、本示例中 caddy2 的 Caddyfile 格式配置与 json 格式配置二选一即可（效果一样）。
+4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。特别提醒：采用改进的 proxyprotocol 插件定制编译，才支持使用 Caddyfile 配置，否则只能使用 json 配置。
 
-5、v2ray SNI 分流不支持 PROXY protocol（发送），故全部配置不启用此项应用。
+5、caddy2 加 caddy-l4 插件定制编译的才可以实现 SNI 分流，目前仅支持使用 json 配置。采用改进的 caddy-l4 插件定制编译的才支持 PROXY protocol 发送，且可以分别对进程或端口开启 PROXY protocol 发送。
 
-6、配置4：端口转发、端口回落\分流及 v2ray SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 v2ray SNI 的进程分流，没有启用 PROXY protocol。
+6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 h2c server、caddy-l4 及 PROXY protocol 等应用。
+
+7、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
