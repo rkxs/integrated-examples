@@ -1,3 +1,4 @@
+  
 {
   "admin": {
     "disabled": true
@@ -14,6 +15,51 @@
     }
   },
   "apps": {
+    "layer4": { //加了caddy-l4插件编译的才可启用SNI分流
+      "servers": {
+        "example": {
+          "listen": [":443"],
+          "routes": [{
+            "match": [{
+              "tls": {
+                "sni": ["zv.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["unix//dev/shm/vless.sock"] //与vless+tcp进程对应
+              }]
+            }]
+          },
+          {
+            "match": [{
+              "tls": {
+                "sni": ["zt.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["unix//dev/shm/trojan.sock"] //与trojan+tcp进程对应
+              }]
+            }]
+          },
+          {
+            "match": [{
+              "tls": {
+                "sni": ["zc.xx.yy"] //修改成自己分流的域名
+              }
+            }],
+            "handle": [{
+              "handler": "proxy",
+              "upstreams": [{
+                "dial": ["unix//dev/shm/trojan.sock"] //与caddy2 https server进程对应
+            }]
+          }]
+        }
+      }
+    },
     "http": {
       "servers": {
         "h1": {
