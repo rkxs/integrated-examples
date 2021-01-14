@@ -6,21 +6,6 @@
   },
   "inbounds": [
     {
-      "port": 443, //SNI分流应用的监听端口
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "0.0.0.0",
-        "network": "tcp",
-        "followRedirect": false
-      },
-      "sniffing": {
-        "enabled": true, //开启流量探测
-        "destOverride": [
-          "tls" //tls探测,以实现SNI分流应用。
-        ]
-      }
-    },
-    {
       "listen": "/dev/shm/vless.sock", //vless+tcp进程
       "protocol": "vless",
       "settings": {
@@ -258,27 +243,6 @@
     "rules": [
       {
         "type": "field",
-        "domain": [
-          "zv.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zv" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zt.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zt" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
-        "domain": [
-          "zc.xx.yy" //修改成自己域名
-        ],
-        "outboundTag": "zc" //与outbounds中标签对应
-      },
-      {
-        "type": "field",
         "inboundTag": [
           "ddws" //与inbounds中标签对应
         ],
@@ -306,36 +270,6 @@
         "dsSettings": {
           "path": "ss", //domainsocket文件路径，与streamSettings中对应。
           "abstract": true
-        }
-      }
-    },
-    {
-      "tag": "zv", //标签，与routing中标签对应。
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "/dev/shm/vless.sock" //与vless+tcp进程对应
-        }
-      }
-    },
-    {
-      "tag": "zt", //标签，与routing中标签对应。
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "/dev/shm/trojan.sock" //与trojan+tcp进程对应
-        }
-      }
-    },
-    {
-      "tag": "zc", //标签，与routing中标签对应。
-      "protocol": "freedom",
-      "streamSettings": {
-        "network": "domainsocket",
-        "dsSettings": {
-          "path": "/dev/shm/caddy.sock" //与caddy server进程对应
         }
       }
     },
