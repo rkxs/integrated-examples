@@ -41,7 +41,7 @@
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["127.0.0.1:2083"] //与trojan进程对应
+                "dial": ["127.0.0.1:2083"] //与trojan端口对应
               }]
             }]
           },
