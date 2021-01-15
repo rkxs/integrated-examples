@@ -53,7 +53,7 @@
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["unix//dev/shm/caddy.sock"] //与caddy2 https server进程对应
+                "dial": ["unix//dev/shm/naive.sock"] //与caddy2 https server进程对应
               }]
             }]
           }]
@@ -75,7 +75,7 @@
             "terminal": true
           }]
         },
-        "h1&h2c": {
+        "h1h2c": {
           "listen": ["127.0.0.1:88"], //本机端口监听，避免除本机外的机器探测及非安全web访问，仅接收web回落。
           "routes": [{
             "handle": [{
@@ -94,8 +94,8 @@
           }],
           "allow_h2c": true //开启h2c server支持
         },
-        "https": {
-          "listen": ["unix//dev/shm/caddy.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
+        "naive": {
+          "listen": ["unix//dev/shm/naive.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
