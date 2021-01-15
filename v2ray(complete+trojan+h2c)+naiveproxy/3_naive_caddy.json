@@ -56,7 +56,7 @@
               "handler": "proxy",
               "proxy_header": "v2", //采用改进的caddy-l4插件编译的才同时支持PROXY protocol发送。v1或v2表示PROXY protocol版本，SNI分流建议采用v2版。
               "upstreams": [{
-                "dial": ["unix//dev/shm/caddy.sock"] //与caddy2 https server进程对应
+                "dial": ["unix//dev/shm/naive.sock"] //与caddy2 https server进程对应
               }]
             }]
           }]
@@ -78,7 +78,7 @@
             "terminal": true
           }]
         },
-        "h1&h2c": {
+        "h1h2c": {
           "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程监听，仅接收web回落。
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
@@ -100,8 +100,8 @@
           }],
           "allow_h2c": true //开启h2c server支持
         },
-        "https": {
-          "listen": ["unix//dev/shm/caddy.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
+        "naive": {
+          "listen": ["unix//dev/shm/naive.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }, 
