@@ -8,7 +8,7 @@
 
 2、caddy2 json 配置才支持此应用， Caddyfile 配置不支持。因 Caddyfile 配置参数是简化的，非完整的。
 
-3、也可以用 haproxy 或 v2ray SNI 等分流来解决问题（不同方法，达到相同效果。）。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。v2ray SNI 配置示例参考 ‘v2ray(other configuration)’ 中 SNI_redirect_config.json 或 SNI_domainsocket_config.json 配置。
+3、也可以用 caddy2 SNI 或 haproxy SNI 等分流来解决问题（不同方法，达到相同效果。）。caddy2 SNI 配置示例见如下介绍。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。
 
 二、caddy2 SNI 分流的配置方法
 
