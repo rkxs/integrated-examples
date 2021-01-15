@@ -44,6 +44,6 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
-5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy、SNI 分流及 PROXY protocol 等应用。
+5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 SNI 分流、h2c server及 PROXY protocol 等应用。
 
 6、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
