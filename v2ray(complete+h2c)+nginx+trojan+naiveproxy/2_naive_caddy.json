@@ -16,8 +16,8 @@
   "apps": {
     "http": {
       "servers": {
-        "https": {
-          "listen": ["unix//dev/shm/caddy.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
+        "naive": {
+          "listen": ["unix//dev/shm/naive.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
@@ -68,7 +68,7 @@
             "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "alpn": ["h2","http/1.1"]
           }],
-          "experimental_http3": true //开启http3 server支持
+          "experimental_http3": false //关闭http3 server支持。目前采用进程监听（server进程）无法启动。
         }
       }
     },
