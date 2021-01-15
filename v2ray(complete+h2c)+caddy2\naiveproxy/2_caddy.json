@@ -29,7 +29,7 @@
             "terminal": true
           }]
         },
-        "h1&h2c": {
+        "h1h2c": {
           "listen": ["unix//dev/shm/h1h2c.sock"], //h2c与http/1.1 server进程监听，仅接收web回落。
           "routes": [{
             "match": [{
