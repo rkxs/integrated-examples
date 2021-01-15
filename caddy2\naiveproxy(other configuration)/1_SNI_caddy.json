@@ -9,7 +9,7 @@
   "apps": {
     "layer4": { //加了caddy-l4插件编译的才可启用SNI分流
       "servers": {
-        "example": {
+        "sni": {
           "listen": [":443"],
           "routes": [{
             "match": [{
