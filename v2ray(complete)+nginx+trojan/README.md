@@ -19,7 +19,7 @@ nginx 为 v2ray、trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2
 
 3、nginx 不支持 h2c proxy，故 nginx 不能实现 v2ray 的 h2（http/2）反向代理。
 
-4、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 不启用此项应用，从而回落部分仅端口监听。
+4、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 不启用此项应用，从而回落部分仅端口回落及端口监听。
 
 5、因 nginx SNI 中的 PROXY protocol 发送是针对共用端口全部开启（全局模式），而 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故所有配置不启用此项应用。
 
