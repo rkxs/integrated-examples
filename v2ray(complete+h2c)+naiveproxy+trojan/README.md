@@ -24,7 +24,7 @@
 
 5、使用本人 github 中编译好的 caddy2 文件，才可同时支持 SNI 分流、naiveproxy、h2c server、h2c proxy及 PROXY protocol 等应用。
 
-6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 不启用此项应用，从而回落部分仅端口监听。
+6、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 不启用此项应用，从而回落部分仅端口回落及端口监听。
 
 7、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故 trojan(trojan-go) 不启用此项应用，从而回落部分不启用 PROXY protocol（接收与发送）。
 
