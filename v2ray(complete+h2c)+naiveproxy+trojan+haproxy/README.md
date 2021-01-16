@@ -30,7 +30,7 @@
 
 8、因 trojan(trojan-go) 不支持 Unix Domain Socket，故对应 trojan(trojan-go)部分仅端口分流与端口回落，从而caddy2 回落部分也仅端口监听。
 
-9、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故对应 trojan(trojan-go)部分不启用此项应用；从而caddy2 回落部分也不启用 PROXY protocol 接收。另外 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不再使用 nginx。
+9、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故对应 trojan(trojan-go)部分不启用此项应用，从而caddy2 回落部分也不启用 PROXY protocol 接收。另外 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不再使用 nginx。
 
 10、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（trojan除外）。
 
