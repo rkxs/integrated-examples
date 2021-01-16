@@ -1,5 +1,6 @@
 {
     admin off
+    auto_https off
     servers unix//dev/shm/h1h2c.sock { //与下边进程监听对应
         listener_wrappers {
             proxy_protocol //开启PROXY protocol接收
