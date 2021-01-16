@@ -19,18 +19,6 @@
         "naive": {
           "listen": ["unix//dev/shm/naive.sock"], //https server进程监听,提供naiveproxy、h2c proxy等应用。
           "routes": [{
-            "handle": [{
-              "handler": "forward_proxy",
-              "hide_ip": true,
-              "hide_via": true,
-              "auth_user": "user", //naiveproxy账号，修改为自己的。
-              "auth_pass": "pass", //naiveproxy密码，修改为自己的。
-              "probe_resistance": {
-              	"domain": "unsplash.com:443"
-              }
-            }]
-          },
-          {
             "match": [{
               "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
             }],
@@ -45,6 +33,18 @@
               }]
             }],
             "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "forward_proxy",
+              "hide_ip": true,
+              "hide_via": true,
+              "auth_user": "user", //naiveproxy账号，修改为自己的。
+              "auth_pass": "pass", //naiveproxy密码，修改为自己的。
+              "probe_resistance": {
+              	"domain": "unsplash.com:443"
+              }
+            }]
           },
           {
             "handle": [{
