@@ -22,9 +22,9 @@ nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四
 
 4、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c proxy 等应用。
 
-5、因 trojan(trojan-go) 不支持 Unix Domain Socket，故对应 trojan(trojan-go) 部分仅端口分流与端口回落，从而 nginx 回落部分也端口监听。
+5、因 trojan(trojan-go) 不支持 Unix Domain Socket，故 trojan(trojan-go) 不启用此项应用，从而回落部分仅端口监听。
 
-6、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故对应 trojan(trojan-go) 部分不启用此项应用，从而 nginx 回落部分也不启用 PROXY protocol 接收。而 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用此项应用。
+6、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故 trojan(trojan-go) 不启用此项应用，从而回落部分不启用 PROXY protocol（接收与发送）。另外 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故所有配置不启用此项应用。
 
 7、本示例中 naiveproxy(caddy2) 的 naive_Caddyfile 配置虽然可用，但会产生很多报错日志（暂不能解决）。
 
