@@ -16,7 +16,7 @@
   "apps": {
     "http": {
       "servers": {
-        "https": {
+        "naive": {
           "listen": [":443"], //监听端口
           "routes": [{
             "handle": [{
