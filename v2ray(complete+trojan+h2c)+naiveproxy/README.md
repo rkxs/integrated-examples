@@ -31,3 +31,5 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy、SNI 分流及 PROXY protocol 等应用。
 
 7、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
+
+8、本示例不推荐同时提供网站服务，否则 caddy2 压力过大。
