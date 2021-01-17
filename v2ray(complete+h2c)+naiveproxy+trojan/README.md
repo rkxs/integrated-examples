@@ -30,4 +30,4 @@
 
 8、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），没有启用 PROXY protocol。配置6：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），启用了 PROXY protocol（回落部分除外）。
 
-9、本示例不推荐同时提供网站服务，否则 caddy2 压力过大。
+9、本示例不推荐同时提供实际网站服务，否则 caddy2 压力过大。
