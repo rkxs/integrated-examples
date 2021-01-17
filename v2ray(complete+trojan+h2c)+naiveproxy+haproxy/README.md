@@ -37,3 +37,5 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 9、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流及 haproxy 或 nginx SNI 的进程分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流及 haproxy 或 nginx SNI 的进程分流，启用了 PROXY protocol。
 
 10、若采用配置3、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1对应 naiveproxy 部分配置：把进程转发改成端口转发，且 naiveproxy http/3 开启即可。
+
+11、若除了实现综合科学上网，还有网站服务，网站服务推荐由nginx提供服务。
