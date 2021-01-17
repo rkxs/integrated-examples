@@ -1,6 +1,6 @@
 介绍：
 
-此示例包括 v2ray、naiveproxy（caddy2）应用。利用 nginx 支持 SNI 分流特性，对 v2ray（vless+tcp）、v2ray（trojan+tcp）、naiveproxy（caddy2）进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流出 ws（WebSocket）连接，回落给 nginx。trojan+tcp 以 h2 协商连接，也回落给 nginx。另 caddy2 为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+此示例包括 v2ray、naiveproxy（caddy2）应用。利用 nginx 支持 SNI 分流特性，对 v2ray（vless+tcp）、v2ray（trojan+tcp）、naiveproxy（caddy2）进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 v2ray（vless+tcp）与 v2ray（trojan+tcp）提供 web 回落服务。另 caddy2 为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
