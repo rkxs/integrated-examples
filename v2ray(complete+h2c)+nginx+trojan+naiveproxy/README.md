@@ -1,6 +1,6 @@
 介绍：
 
-nginx 为 v2ray、trojan(trojan-go)、naiveproxy(caddy2) 进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务。caddy2 为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+利用 nginx 支持 SNI 分流特性，对 vless+tcp 与 trojan+tcp 进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 vless+tcp 与 trojan(trojan-go) 提供 web 回落服务。caddy2 为 vless/vmess+h2c 提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
