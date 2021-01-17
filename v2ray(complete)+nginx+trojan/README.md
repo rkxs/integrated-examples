@@ -1,6 +1,6 @@
 介绍：
 
-利用 nginx 支持 SNI 分流特性，对 v2ray 与 trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 vless+tcp 与 trojan（trojan-go）提供 web 回落服务。v2ray 包括如下应用：
+此示例包括 v2ray、trojan(trojan-go) 应用。利用 nginx 支持 SNI 分流特性，对 v2ray 与 trojan(trojan-go) 进行 SNI 分流（四层转发），除 v2ray kcp 外实现共用443端口；同时为 vless+tcp 与 trojan（trojan-go）提供 web 回落服务。v2ray 包括如下应用：
 
 1、vless+tcp+tls（回落/分流配置。）
 
