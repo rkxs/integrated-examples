@@ -33,11 +33,11 @@
 1. [v2ray(vless+tcp&ws+tls)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bcaddy2%5Cnaiveproxy)（vless的tcp与ws应用，web回落给caddy2，或加naiveproxy应用。）  
 2. [v2ray(complete+h2c)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bcaddy2%5Cnaiveproxy) （v2ray或Xray综合应用加反向代理h2应用，或加naiveproxy应用。）  
 3. [v2ray(complete+h2c)+naiveproxy+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan) （上一项应用加trojan应用及共用端口。）  
-4. [v2ray(complete+h2c)+naiveproxy+trojan+haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bhaproxy) （用haproxy或nginx对上一项应用进行SNI分流共用端口，平衡压力。）  
+4. [v2ray(complete+h2c)+naiveproxy+trojan+haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bhaproxy) （用haproxy或nginx对上一项应用SNI分流，平衡压力。）  
 ---
 1. [v2ray(vless&trojan+tcp&ws+tls)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%26trojan%2Btcp%26ws%2Btls)%2Bcaddy2) （回落终极部署/套娃方式，或共用端口。）  
 2. [v2ray(complete+trojan+h2c)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy) （v2ray或Xray全部应用加naiveproxy应用及共用端口。）  
-3. [v2ray(complete+trojan+h2c)+naiveproxy+haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bhaproxy) （用haproxy或nginx对上一项应用进行SNI分流共用端口，平衡压力。）  
+3. [v2ray(complete+trojan+h2c)+naiveproxy+haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bhaproxy) （用haproxy或nginx对上一项应用SNI分流，平衡压力。）  
 #### &emsp;v2ray或Xray为主、nginx为辅及其它应用。  
 1. [v2ray(complete-tcp)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete-tcp)%2Bnginx) （nginx反向代理ws的综合应用。）  
 ---
