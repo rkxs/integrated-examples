@@ -14,9 +14,7 @@
 
 1、若不同域名没有使用通配符证书，那么还需要在 Xray 中并列配置多个域名对应的证书及私钥。
 
-2、caddy2 json 配置才支持此应用， Caddyfile 配置不支持。因 Caddyfile 配置参数是简化的，非完整的。
-
-3、也可以用 nginx SNI、haproxy SNI 及 caddy2（SNI及host分流）等分流来解决问题（不同方法，达到相同效果。）。相关 SNI 分流见各自相关示例。
+2、也可以用 nginx SNI、haproxy SNI 及 caddy2（SNI及host分流）等分流来解决问题（不同方法，达到相同效果。）。相关 SNI 分流见各自相关示例。
 
 三、v2ray 或 Xray SNI 分流的配置方法
 
