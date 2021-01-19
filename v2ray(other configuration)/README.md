@@ -12,11 +12,13 @@
 
 注意：
 
-1、若不同域名没有使用通配符证书，那么还需要在 Xray 中并列配置多个域名对应的证书及私钥。
+1、Xray v1.2.2 版本及以后才支持 VLESS fallbacks SNI shunt。
 
-2、此 fallbacks SNI 回落是解除 TLS 后 Xray 进行的 TCP 分流。
+2、若不同域名没有使用通配符证书，那么还需要在 Xray 中并列配置多个域名对应的证书及私钥。
 
-3、也可以用 nginx SNI、haproxy SNI 及 caddy2（SNI及host分流）等分流来解决问题（不同方法，达到相同效果。）。相关 SNI 分流见各自相关示例。
+3、此 fallbacks SNI 回落是解除 TLS 后 Xray 进行的 TCP 分流。
+
+4、也可以用 nginx SNI、haproxy SNI 及 caddy2（SNI及host分流）等分流来解决问题（不同方法，达到相同效果。）。相关 SNI 分流见各自相关示例。
 
 三、v2ray 或 Xray SNI 分流的配置方法
 
