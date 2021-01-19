@@ -6,9 +6,11 @@
 
 1、若不同域名没有使用通配符证书，那么还需要在 v2ray 或 Xray 中并列配置多个域名对应的证书及私钥。
 
-2、caddy2 json 配置才支持此应用， Caddyfile 配置不支持。因 Caddyfile 配置参数是简化的，非完整的。
+2、此回落到不同网站是解除 TLS 后的 caddy2 进行的 TCP 分流。
 
-3、也可以用 caddy2 SNI 或 haproxy SNI 等分流来解决问题（不同方法，达到相同效果。）。caddy2 SNI 配置示例见如下介绍。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。
+3、caddy2 json 配置才支持此应用， Caddyfile 配置不支持。因 Caddyfile 配置参数是简化的，非完整的。
+
+4、也可以用 caddy2 SNI 或 haproxy SNI 等分流来解决问题（不同方法，达到相同效果。）。caddy2 SNI 配置示例见如下介绍。haproxy SNI 配置示例参考示例中用 haproxy SNI 分流的 haproxy 配置。
 
 二、caddy2 SNI 分流的配置方法
 
