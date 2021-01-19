@@ -19,7 +19,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "alpn": "h2", //h2回落匹配 
+            "alpn": "h2", //h2回落匹配
             "dest": "/dev/shm/h2c.sock", //h2回落进程
             "xver": 0 //关闭PROXY protocol发送，不发送真实来源IP和端口给nginx。另默认为0，此条参数可以省略不写。
           },
