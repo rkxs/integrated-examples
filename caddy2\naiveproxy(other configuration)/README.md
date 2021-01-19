@@ -6,7 +6,7 @@
 
 1、若不同域名没有使用通配符证书，那么还需要在 v2ray 或 Xray 中并列配置多个域名对应的证书及私钥。
 
-2、此回落到不同网站是 v2ray 或 Xray 解除 TLS 后 caddy2 进行的 TCP 分流。
+2、此回落到不同网站是 v2ray 或 Xray 解除 tls 后 caddy2 进行的 host（域名）分流。
 
 3、caddy2 json 配置才支持此应用， Caddyfile 配置不支持。因 Caddyfile 配置参数是简化的，非完整的。
 
