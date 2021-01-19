@@ -6,7 +6,7 @@
 
 2、本人 github 中的所有配置示例都已配置了禁用 BT，此配置方法仅备份及参考等。
 
-一、Xray fallbacks SNI 回落到不同网站的配置方法
+二、Xray fallbacks SNI 回落到不同网站的配置方法
 
 此方法解决 v2ray 或 Xray 前置监听443后，不影响原来不同域名访问不同网站问题。
 
