@@ -32,7 +32,15 @@
 
 dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方式申请通配符证书的示例。v2ray（Xray）可以直接使用/home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy路径及目录中通配符证书。
 
-四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法
+注意：
+
+1、dnspod 分 dnspod.com（国际版）与 dnspod.cn（中国版），故两者插件不通用，必须各自对应 dnspod 域名解析使用。
+
+2、cloudflare 插件目前已不支持 freenom 免费后缀的域名了。
+
+3、v2ray（Xray）可以直接使用 caddy 以 DNS API 方式申请通配符证书，但目前v2ray（Xray）不支持证书热加载，故证书到期后更新后需要手工重启 v2ray（Xray）重新加载更新证书。
+
+四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法 
 
 此 naive_Caddyfile 模板实现了 naiveproxy 应用开启 PROXY protocol、http/3及 h2c server 的支持。
 
