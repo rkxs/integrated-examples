@@ -41,4 +41,3 @@ v2ray vless+tcp 类应用直连，v2ray ws（WebSocket）类应用分流一次�
 11、若采用配置2/配置3、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1。nginx 添加 udp 代理。naiveproxy 把进程转发改成端口转发，且 naiveproxy http/3 开启。
 
 12、若除了实现最多应用的科学上网，还需提供实际网站服务，推荐本示例。网站服务可由 nginx 或 caddy2 提供服务。
-
