@@ -28,7 +28,11 @@
 
 5、本人 github 中的相关配置示例已配置 caddy2 SNI 分流共用端口 ，此配置方法仅备份及参考等。
 
-三、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法
+三、以DNS API方式申请通配符证书
+
+dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方式申请通配符证书的示例。
+
+四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法
 
 此 naive_Caddyfile 模板实现了 naiveproxy 应用开启 PROXY protocol、http/3及 h2c server 的支持。
 
