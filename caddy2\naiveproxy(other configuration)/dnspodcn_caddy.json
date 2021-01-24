@@ -4,6 +4,9 @@
             "certificate_selection": {
               "any_tag": ["tls-1"]
             },
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
+            "alpn": ["h2","http/1.1"]
+          }],
 .........<省略>........
     "tls": {
       "certificates": {
@@ -14,8 +17,7 @@
         }]
       }
     }
-  }
-}
+.........<省略>........
 
 //dnspodcn申请通配符证书
 .........<省略>........
@@ -23,6 +25,9 @@
             "match": {
               "sni": ["*.xx.yy","xx.yy"]
             },
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
+            "alpn": ["h2","http/1.1"]
+          }],
 .........<省略>........
     "tls": {
       "certificates": {
@@ -51,5 +56,4 @@
         }]
       }
     }
-  }
-}
+.........<省略>........
