@@ -34,7 +34,7 @@ dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方�
 
 注意：
 
-1、dnspod 分 dnspod.com（国际版）与 dnspod.cn（中国版），故两者插件不通用，必须各自对应 dnspod 域名解析使用。
+1、dnspod 分 dnspod.com（国际版）与 dnspod.cn（中国版），故两者插件不通用，必须对应各自 dnspod 域名解析使用。
 
 2、cloudflare 插件目前已不支持 freenom 免费后缀的域名了。
 
