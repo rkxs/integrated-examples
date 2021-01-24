@@ -30,7 +30,7 @@
 
 三、caddy2 以DNS API方式申请通配符证书
 
-dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方式申请通配符证书的示例。v2ray（Xray）可以直接使用/home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy路径及目录中通配符证书。
+dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方式申请通配符证书示例。v2ray（Xray）可以直接使用 /home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy 路径及目录中通配符证书。
 
 注意：
 
