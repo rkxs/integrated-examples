@@ -19,7 +19,7 @@
     }
 .........<省略>........
 
-//dnspodcn申请通配符证书
+//cloudflare申请通配符证书
 .........<省略>........
           "tls_connection_policies": [{
             "match": {
