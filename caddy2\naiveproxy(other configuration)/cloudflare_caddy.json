@@ -48,7 +48,7 @@
           }],
           "storage": {
             "module": "file_system",
-            "root": "/home/tls" //存放tls证书文件夹
+            "root": "/home/tls" //存放tls证书路径及目录
           }
         }]
       }
