@@ -41,7 +41,7 @@
               "dns":{
                 "provider":{
                   "name": "cloudflare",
-                  "api_token": "{env.DNSPOD_TOKEN}"//换成你dnspod.cn的DP_Id与DP_Key，中间用.隔开。
+                  "api_token": "{e09062f1fd2545555fc8a15fceda2222}"//换成你cloudflare的api
                 }
               }
             }
