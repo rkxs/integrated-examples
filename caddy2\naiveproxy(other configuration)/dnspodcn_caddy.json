@@ -1,0 +1,55 @@
+//原配置参数：
+.........<省略>........
+          "tls_connection_policies": [{
+            "certificate_selection": {
+              "any_tag": ["tls-1"]
+            },
+.........<省略>........
+    "tls": {
+      "certificates": {
+        "load_files": [{
+          "certificate": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径。
+          "key": "/etc/ssl/tls/xx.yy.key", //换成你的私钥，绝对路径。
+          "tags": ["tls-1"]
+        }]
+      }
+    }
+  }
+}
+
+//dnspodcn申请通配符证书
+.........<省略>........
+          "tls_connection_policies": [{
+            "match": {
+              "sni": ["*.xx.yy","xx.yy"]
+            },
+.........<省略>........
+    "tls": {
+      "certificates": {
+        "automate": ["*.xx.yy","xx.yy"]
+      },
+      "automation":{
+        "policies":[{
+          "issuers":[{
+            "module":"acme",
+            "challenges":{
+              "dns":{
+                "provider":{
+                  "Language":"en",
+                  "name":"dnspodcn",
+                  "BaseURL":"https://dnsapi.cn",
+                  "AppID":"1232456", //换成你dnspod.cn的DP_Id
+                  "AppToken":"e09062f1fd2545555fc8a15fceda2222" //换成你dnspod.cn的DP_Key
+                }
+              }
+            }
+          }],
+          "storage": {
+            "module": "file_system",
+            "root": "/home/tls" //存放tls证书文件夹
+          }
+        }]
+      }
+    }
+  }
+}
