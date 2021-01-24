@@ -41,7 +41,7 @@
               "dns":{
                 "provider":{
                   "name": "dnspod",
-                  "auth_token": "{env.DNSPOD_TOKEN}"//换成你dnspod.cn的DP_Id与dnspod.cn的DP_Key，中间用.隔开。
+                  "auth_token": "{env.DNSPOD_TOKEN}"//换成你dnspod.cn的DP_Id与DP_Key，中间用.隔开。
                 }
               }
             }
