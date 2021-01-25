@@ -38,7 +38,7 @@ dnspod_caddy.json、cloudflare_caddy.json、dnspodcn_caddy.json为以DNS API方�
 
 2、cloudflare 插件目前已不支持 freenom 免费后缀的域名了。
 
-3、v2ray（Xray）可以直接使用 caddy 以 DNS API 方式申请通配符证书，但目前v2ray（Xray）不支持证书热加载，故证书到期更新后需要手工重启 v2ray（Xray）重新加载更新证书。
+3、v2ray（Xray）可以直接使用 caddy 以 DNS API 方式申请通配符证书，但目前v2ray（Xray）不支持自动热重载证书；故证书到期更新后，需手动重启 v2ray（Xray）来重新加载更新证书。
 
 四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法 
 
