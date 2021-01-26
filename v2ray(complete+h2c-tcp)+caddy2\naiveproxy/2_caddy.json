@@ -20,79 +20,70 @@
           "listen": [":443"],
           "routes": [{
             "match": [{
-              "host": ["xx.yy"] //修改成自己的域名
+              "path": ["/HALdGZ9k"], //与本机vless+ws path对应,分流出ws。
+              "header": {
+                "Connection": ["*Upgrade*"],
+                "Upgrade": ["websocket"]
+              }
             }],
             "handle": [{
-              "handler": "subroute",
-              "routes": [{
-                "match": [{
-                  "path": ["/HALdGZ9k"], //与本机vless+ws path对应,分流出ws。
-                  "header": {
-                    "Connection": ["*Upgrade*"],
-                    "Upgrade": ["websocket"]
-                  }
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http"
-                  },
-                  "upstreams": [{
-                    "dial": "unix//dev/shm/vws.sock" //转发给本机vless+ws对应进程
-                  }]
-                }],
-                "terminal": true
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http"
               },
-              {
-                "match": [{
-                  "path": ["/ss1v2ray"], //与本机shadowsocks+ws path对应,分流出ws。
-                  "header": {
-                    "Connection": ["*Upgrade*"],
-                    "Upgrade": ["websocket"]
-                  }
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http"
-                  },
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2002" //转发给本机shadowsocks+ws对应端口
-                  }]
-                }],
-                "terminal": true
-              },
-              {
-                "match": [{
-                  "path": ["/SeuW56Es"] //与本机vless+h2 path对应,分流出h2。
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http",
-                    "versions": ["h2c"]
-                  },
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2005" //转发给本机vless+h2对应端口
-                  }]
-                }],
-                "terminal": true
-              },
-              {
-                "handle": [{
-                  "handler": "headers",
-                  "response": {
-                    "set": {
-                      "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
-                    }
-                  }
-                },
-                {
-                  "handler": "file_server",
-                  "root": "/var/www/html" //修改成自己存放的web文件路径
-                }],
-                "terminal": true
+              "upstreams": [{
+                "dial": "unix//dev/shm/vws.sock" //转发给本机vless+ws对应进程
               }]
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+              "path": ["/ss1v2ray"], //与本机shadowsocks+ws path对应,分流出ws。
+              "header": {
+                "Connection": ["*Upgrade*"],
+                "Upgrade": ["websocket"]
+              }
+            }],
+            "handle": [{
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http"
+              },
+              "upstreams": [{
+                "dial": "127.0.0.1:2002" //转发给本机shadowsocks+ws对应端口
+              }]
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+              "path": ["/SeuW56Es"] //与本机vless+h2 path对应,分流出h2。
+            }],
+            "handle": [{
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
+              },
+              "upstreams": [{
+                "dial": "127.0.0.1:2005" //转发给本机vless+h2对应端口
+              }]
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
+                }
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
             }],
             "terminal": true
           }],
@@ -107,13 +98,8 @@
       }
     },
     "tls": {
-      "automation": {
-        "policies": [{
-          "subjects": ["xx.yy"], //修改成自己的域名
-          "issuer": {
-            "module": "acme"
-          }
-        }]
+      "certificates": {
+        "automate": ["xx.yy"] //修改成自己的域名
       }
     }
   }
