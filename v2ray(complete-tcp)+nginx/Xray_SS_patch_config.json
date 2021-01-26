@@ -1,0 +1,51 @@
+  
+//Xray-core v1.2.3 开始支持 Shadowsocks AEAD 单端口多用户。与vmess、vless、trojan协议的单端口多用户类似了。AEAD：aes-256-gcm、aes-128-gcm、chacha20-poly1305。
+//原来配置：
+.........<省略>........
+      "settings": {
+        "email": "2003@gmail.com",
+        "method": "chacha20-poly1305",
+        "password": "diy2003", //修改成自己的密码
+        "ota": false,
+        "network": "tcp,udp"
+      },
+.........<省略>........
+
+//配置可修改如下：
+//单用户
+.........<省略>........
+      "settings": {
+        "clients": [
+          {
+            "method": "chacha20-poly1305",
+            "password": "diy2003", //修改成自己的密码
+            "email": "2003@gmail.com"
+          }
+        ],
+        "network": "tcp,udp"
+      },
+.........<省略>........
+
+//多用户
+.........<省略>........
+      "settings": {
+        "clients": [
+          {
+            "method": "aes-256-gcm",
+            "password": "diy2013", //修改成自己的密码
+            "email": "2013@gmail.com"
+          },
+          {
+            "method": "aes-128-gcm",
+            "password": "diy2023", //修改成自己的密码
+            "email": "2023@gmail.com"
+          },
+          {
+            "method": "chacha20-poly1305",
+            "password": "diy2033", //修改成自己的密码
+            "email": "2033@gmail.com"
+          }
+        ],
+        "network": "tcp,udp"
+      },
+.........<省略>........

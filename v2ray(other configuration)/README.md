@@ -6,19 +6,35 @@
 
 2、本人 github 中的所有配置示例都已配置了禁用 BT，此配置方法仅备份及参考等。
 
-二、v2ray 或 Xray SNI 分流的配置方法
+二、Xray fallbacks SNI 回落到不同网站的配置方法
+
+此方法解决 v2ray 或 Xray 前置监听443后，不影响原来不同域名访问不同网站问题。
+
+注意：
+
+1、Xray v1.2.2 版本及以后才支持 VLESS fallbacks SNI shunt。
+
+2、若不同域名没有使用通配符证书，那么还需要在 Xray 中并列配置多个域名对应的证书及私钥。
+
+3、此 fallbacks SNI 回落是解除 tls 后 Xray 进行的 name（域名）分流。
+
+4、也可以用 nginx SNI、haproxy SNI 及 caddy2（SNI及host分流）等分流来解决问题（不同方法，达到相同效果。）。相关 SNI 分流见各自相关示例。
+
+三、v2ray 或 Xray SNI 分流的配置方法
+
+此方法也可以解决 v2ray（Xray）应用与网站应用（原网站不想做回落网站，或 nginx/caddy2 等有多个网站应用。）共用443端口问题。
 
 注意：
 
 1、v2ray SNI 分流不支持 PROXY protocol（发送）。
 
-2、SNI_redirect_config.json 分流采用 local loopback 应用（redirect），实现转发端口（域名）的分流，简称 v2ray SNI 的端口分流。此端口分流效率稍低，可适用全部服务器。
+2、1_SNI_config.json 分流采用 local loopback 应用（redirect），实现转发端口（域名）的分流，简称 v2ray SNI 的端口分流。此端口分流效率稍低，可适用全部服务器。
 
-3、SNI_domainsocket_config.json 分流采用 Unix Domain Socket 应用，实现转发进程（域名）的分流，简称 v2ray SNI 的进程分流。此进程分流效率高，但在 Windows 10 Build 17036 前不可用。
+3、2_SNI_config.json 分流采用 Unix Domain Socket 应用，实现转发进程（域名）的分流，简称 v2ray SNI 的进程分流。此进程分流效率高，但在 Windows 10 Build 17036 前不可用。
 
-4、本人 github 中的相关配置示例已配置 v2ray SNI 分流共用端口 ，此配置方法仅备份及参考等。
+4、本人 github 中 v2ray SNI 分流配置示例已被其它 SNI 分流配置示例优势替代 ，此配置方法仅备份及参考等。
 
-三、v2ray 流量统计的配置方法
+四、v2ray 流量统计的配置方法
 
 1、流量统计介绍
 
