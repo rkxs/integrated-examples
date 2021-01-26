@@ -1,4 +1,5 @@
 {
+    order reverse_proxy before header
     admin off
     servers unix//dev/shm/h1h2c.sock { //与下边进程监听对应
         listener_wrappers {
@@ -20,19 +21,17 @@
         output file /var/log/caddy/access.log
         level  ERROR
     }
-    route {
-        reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
-            transport http {
-                versions h2c
-            }
+
+    reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
+        transport http {
+            versions h2c
         }
-        handle {
-            header {
-                Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
-            }
-            file_server {
-                root /var/www/html //修改成自己存放的web文件路径
-            }
-        }
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+    }
+    file_server {
+        root /var/www/html //修改成自己存放的web文件路径
     }
 }
