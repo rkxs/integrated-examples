@@ -22,7 +22,7 @@
     redir https://{host}{uri} permanent //http自动跳转https,让网站看起来更真实。
 }
 
-:88 { //启用进程绑定后此端口失效，仅做标记作用。	:88 { //监听端口，仅接收web回落。
+:88 { //启用进程绑定后此端口失效，仅做标记作用。
     bind unix//dev/shm/h1h2c.sock //启用进程绑定后执行进程监听，仅接收web回落。
     log {
         output file /var/log/caddy/access.log
