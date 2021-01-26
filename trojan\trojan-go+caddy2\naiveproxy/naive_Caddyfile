@@ -18,12 +18,14 @@
         output file /var/log/caddy/access.log
         level  ERROR
     }
+
     forward_proxy {
         basic_auth user pass //naiveproxy账号与密码，修改为自己的。
         hide_ip
         hide_via
         probe_resistance unsplash.com:443
     }
+
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
     }
