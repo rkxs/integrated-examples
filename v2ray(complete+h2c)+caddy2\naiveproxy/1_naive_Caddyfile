@@ -1,6 +1,7 @@
 {
+    order reverse_proxy before header
+    order forward_proxy before reverse_proxy
     admin off
-    auto_https off
     servers 127.0.0.1:88 { //与下边端口监听对应
         protocol {
             allow_h2c //开启h2c server支持
@@ -18,25 +19,23 @@
         output file /var/log/caddy/access.log
         level  ERROR
     }
-    route {
-        reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
-            transport http {
-                versions h2c
-            }
+
+    reverse_proxy /SeuW56Es 127.0.0.1:2005 { //分流出h2,与v2ray h2 path对应；转发给v2ray h2 端口对应。
+        transport http {
+            versions h2c
         }
-        forward_proxy {
-            basic_auth user pass //naiveproxy账号与密码，修改为自己的。
-            hide_ip
-            hide_via
-            probe_resistance unsplash.com:443
-        }
-        handle {
-            header {
-                Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
-            }
-            file_server {
-                root /var/www/html //修改成自己存放的web文件路径
-            }
-        }
+    }
+    forward_proxy {
+        basic_auth user pass //naiveproxy账号与密码，修改为自己的。
+        hide_ip
+        hide_via
+        probe_resistance unsplash.com:443
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" //启用HSTS
+    }
+    file_server {
+        root /var/www/html //修改成自己存放的web文件路径
     }
 }
