@@ -29,7 +29,9 @@
 4. [v2ray(trojan+tcp+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(trojan%2Btcp%2Btls)%2Bnginx) （兼容trojan应用，web回落给nginx。）  
 
 ### 服务端综合应用配置示例
-#### &emsp;v2ray或Xray为主、caddy2为辅的综合应用。
+#### &emsp;trojan或trojan-go为主、caddy2(naiveproxy)为辅的综合应用。
+1. [trojan\trojan-go+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnaiveproxy) （trojan或trojan-go应用，web回落给caddy2及naiveproxy应用。）  
+#### &emsp;v2ray或Xray为主、caddy2(naiveproxy)为辅的综合应用。
 1. [v2ray(complete+h2c-tcp)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bcaddy2%5Cnaiveproxy) （caddy2反向代理ws与h2的综合应用，或加naiveproxy应用。）  
 ---
 1. [v2ray(vless+tcp&ws+tls)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bcaddy2%5Cnaiveproxy)（vless的tcp与ws应用，web回落给caddy2，或加naiveproxy应用。）  
