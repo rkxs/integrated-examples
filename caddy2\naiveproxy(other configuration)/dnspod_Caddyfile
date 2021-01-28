@@ -20,6 +20,8 @@
 //原配置参数（其它第三方软件申请tls证书，手工配置路径加载。）：
 {
 .........<省略>........
+    admin off
+.........<省略>........
 }
 .........<省略>........
 :7443 { //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
@@ -30,10 +32,15 @@
     }
 .........<省略>........
 
-//cloudflare dns api申请tls证书（DNS-01 challenge申请tls证书。）
+//dnspod dns api申请tls证书（DNS-01 challenge申请tls证书。）
 {
     http_port 808
     https_port 7443
+.........<省略>........
+    admin off
+    storage file_system {
+        root /home/tls //存放tls证书路径及目录
+    }
 .........<省略>........
 }
 .........<省略>........
