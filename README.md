@@ -50,9 +50,9 @@
 #### &emsp;兼顾各自优势的综合应用。
 1. [v2ray(complete)+nginx+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx%2Btrojan) （v2ray或Xray加trojan应用及nginx SNI共用端口。）
 2. [v2ray(complete+h2c)+naiveproxy+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan) （v2ray或Xray加naiveproxy、trojan应用及caddy2 SNI共用端口。）  
-3. [v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy) （v2ray或Xray加naiveproxy、trojan应用及用nginx或haproxy SNI分流。）  
+3. [v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy) （用nginx或haproxy SNI分流，平衡兼顾各应用。）  
 ---
-1. [v2ray(complete+trojan+h2c)+naiveproxy+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bnginx%5Chaproxy) （v2ray或Xray加naiveproxy应用及用nginx或haproxy SNI分流。）  
+1. [v2ray(complete+trojan+h2c)+naiveproxy+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bnginx%5Chaproxy) （用nginx或haproxy SNI分流，平衡兼顾各应用。）  
 #### 以上所有实例注意:
 1. 所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
 2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。   
