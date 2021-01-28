@@ -1,0 +1,47 @@
+//原配置参数（默认HTTP-01 challenge或TLS-ALPN-01 challenge申请非通配符tls证书。）：
+.........<省略>........
+    tls {
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn http/1.1 h2
+    }
+.........<省略>........
+
+//cloudflare dns api申请tls证书（DNS-01 challenge申请tls证书。）
+.........<省略>........
+    tls {
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn http/1.1 h2
+        dns cloudflare {e09062f1fd2545555fc8a15fceda2222} //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
+    }
+.........<省略>........
+
+
+
+//原配置参数（其它第三方软件申请tls证书，手工配置路径加载。）：
+{
+.........<省略>........
+}
+.........<省略>........
+:7443 { //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
+    bind 127.0.0.1 //只监听本机，避免本机外的机器探测到上面端口。
+    tls /etc/ssl/tls/xx.yy.crt /etc/ssl/tls/xx.yy.key { //换成你的证书与私钥，绝对路径。
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn h2 http/1.1
+    }
+.........<省略>........
+
+//cloudflare dns api申请tls证书（DNS-01 challenge申请tls证书。）
+{
+    http_port 808
+    https_port 7443
+.........<省略>........
+}
+.........<省略>........
+:7443 { //本机https server端口监听，提供naiveproxy、h2c proxy等应用。
+    bind 127.0.0.1 //只监听本机，避免本机外的机器探测到上面端口。
+    tls {
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        alpn http/1.1 h2
+        dns cloudflare {e09062f1fd2545555fc8a15fceda2222} //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
+    }
+.........<省略>........
