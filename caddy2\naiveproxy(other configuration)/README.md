@@ -28,9 +28,10 @@
 
 5、本人 github 中的相关配置示例已配置 caddy2 SNI 分流共用端口 ，此配置方法仅备份及参考等。
 
-三、caddy2 以DNS API方式申请通配符证书
+三、caddy2 以DNS API方式申请tls证书
 
-dnspod_naive_caddy.json、cloudflare_naive_caddy.json、dnspodcn_naive_caddy.json为以DNS API方式申请通配符证书示例。v2ray（Xray）可以直接使用 /home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy 路径及目录中通配符证书。
+1、dnspod、cloudflare、dnspodcn为以DNS API方式申请通tls证书，可以申请普通证书，也可以申请通配符证书。
+2、v2ray（Xray）可以直接使用 /home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy 路径及目录中通配符证书。
 
 注意：
 
