@@ -31,6 +31,7 @@
 三、caddy2 以DNS API方式申请tls证书
 
 1、dnspod、cloudflare、dnspodcn为以DNS API方式申请通tls证书，可以申请普通证书，也可以申请通配符证书。
+
 2、v2ray（Xray）可以直接使用 /home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy 路径及目录中通配符证书。
 
 注意：
