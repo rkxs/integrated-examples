@@ -30,4 +30,4 @@
 
 8、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），没有启用 PROXY protocol。配置6：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），启用了 PROXY protocol（回落部分除外）。
 
-9、若有实际网站服务推荐采用[v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy)示例，否则 caddy2 压力过大。
+9、若有实际网站服务推荐采用[v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy)示例，否则 caddy2（naiveproxy）压力过大。
