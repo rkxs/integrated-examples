@@ -45,3 +45,4 @@
         dns cloudflare {e09062f1fd2545555fc8a15fceda2222} //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
     }
 .........<省略>........
+注意：不支持进程监听模式。
