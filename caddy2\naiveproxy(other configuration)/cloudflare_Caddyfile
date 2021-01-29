@@ -11,7 +11,7 @@
     tls {
         ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
         alpn http/1.1 h2
-        dns cloudflare {e09062f1fd2545555fc8a15fceda2222} //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
+        dns cloudflare e09062f1fd2545555fc8a15fceda2222 //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
     }
 .........<省略>........
 注意：
@@ -51,7 +51,7 @@
     tls {
         ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
         alpn http/1.1 h2
-        dns cloudflare {e09062f1fd2545555fc8a15fceda2222} //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
+        dns cloudflare e09062f1fd2545555fc8a15fceda2222 //换成你cloudflare的api，此api是你配置相关生成的，详细参考官方及cloudflare插件github。
     }
 .........<省略>........
 注意：
