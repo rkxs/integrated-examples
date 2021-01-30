@@ -20,7 +20,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 5、本示例中 caddy2 的 Caddyfile 格式配置与 json 格式配置二选一即可（效果一样）。
 
-6、此方法采用的是套娃方式实现共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，且仅需要一个域名及普通证书即可搞定，但 trojan+tcp 不支持 xtls 应用。
+6、此方法采用的是套娃方式实现共用443端口，支持 vless+tcp 与 trojan+tcp 完美共存，且仅需要一个域名及普通证书即可搞定，但 trojan+tcp 不支持 xtls 应用。
 
 7、配置1：端口转发、端口回落\分流，没有启用 PROXY protocol。配置2：进程转发、进程回落\分流，没有启用 PROXY protocol。配置3：进程转发、进程回落\分流，启用了 PROXY protocol。
 
@@ -33,8 +33,6 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加其它ws类应用，参考反向代理ws类的单一示例。）
 
 3、trojan+tcp+tls（回落配置。）
-
-利用 caddy2 SNI 分流特性，实现了共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
 
 注意：
 
