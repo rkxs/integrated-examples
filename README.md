@@ -35,36 +35,36 @@
 1. [v2ray(complete-tcp)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete-tcp)%2Bnginx) （nginx反向代理ws的综合应用。）
 ---
 1. [v2ray(vless+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bnginx) （vless的tcp与ws类应用，web回落给nginx。）
-2. [v2ray(complete)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx) （v2ray或Xray综合应用。）
+2. [v2ray(complete)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx) （Xray或v2ray综合应用。）
 ---
 1. [v2ray(vless&trojan+tcp&ws+tls)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%26trojan%2Btcp%26ws%2Btls)%2Bnginx) （回落终极部署/套娃方式，或nginx SNI共用端口。）
-2. [v2ray(complete+trojan)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan)%2Bnginx) （加trojan的v2ray或Xray综合应用及nginx SNI共用端口。）
+2. [v2ray(complete+trojan)+nginx](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan)%2Bnginx) （加trojan的Xray或v2ray综合应用及nginx SNI共用端口。）
 #### &emsp;以Xray（v2ray）为主、caddy2(naiveproxy)为辅的综合应用。
 1. [v2ray(complete+h2c-tcp)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c-tcp)%2Bcaddy2%5Cnaiveproxy) （caddy2反向代理ws与h2的综合应用，或加naiveproxy应用。）
 ---
 1. [v2ray(vless+tcp&ws+tls)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%2Btcp%26ws%2Btls)%2Bcaddy2%5Cnaiveproxy)（vless的tcp与ws应用，web回落给caddy2，或加naiveproxy应用。）
-2. [v2ray(complete+h2c)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bcaddy2%5Cnaiveproxy) （v2ray或Xray综合应用加反向代理h2应用，或加naiveproxy应用。）
+2. [v2ray(complete+h2c)+caddy2\naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bcaddy2%5Cnaiveproxy) （Xray或v2ray综合应用加反向代理h2应用，或加naiveproxy应用。）
 ---
 1. [v2ray(vless&trojan+tcp&ws+tls)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%26trojan%2Btcp%26ws%2Btls)%2Bcaddy2) （回落终极部署/套娃方式，或caddy2 SNI共用端口。）
-2. [v2ray(complete+trojan+h2c)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy) （v2ray或Xray全部应用加naiveproxy应用及caddy2 SNI共用端口。）
+2. [v2ray(complete+trojan+h2c)+naiveproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy) （Xray或v2ray全部应用加naiveproxy应用及caddy2 SNI共用端口。）
 #### &emsp;兼顾各自优势的综合应用。
-1. [v2ray(complete)+nginx+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx%2Btrojan) （v2ray或Xray加trojan应用及nginx SNI共用端口。）
-2. [v2ray(complete+h2c)+naiveproxy+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan) （v2ray或Xray加naiveproxy、trojan应用及caddy2 SNI共用端口。）  
+1. [v2ray(complete)+nginx+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete)%2Bnginx%2Btrojan) （Xray或v2ray加trojan应用及nginx SNI共用端口。）
+2. [v2ray(complete+h2c)+naiveproxy+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan) （Xray或v2ray加naiveproxy、trojan应用及caddy2 SNI共用端口。）  
 3. [v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy) （用nginx或haproxy SNI分流，平衡兼顾各应用。）  
 ---
 1. [v2ray(complete+trojan+h2c)+naiveproxy+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bnginx%5Chaproxy) （用nginx或haproxy SNI分流，平衡兼顾各应用。）  
 #### &emsp;以上所有实例注意:
 1. 所有v2ray或Xray配置文件都配置了禁用BT。如不需要，可以删除相关配置（参考v2ray(other configuration)中BT_config.json文件）。  
 2. v2ray从版本v4.33.0删除了xtls应用，故若还想用xtls应用，请选Xray。Xray是v2ray分支，也是因为这个应用分家。   
-3. complete表示包含v2ray或Xray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vless+kcp+seed的综合应用。  
+3. complete表示包含Xray或v2ray的vless+tcp+tls、vless+ws+tls、SS+v2ray-plugin+tls、vless+kcp+seed的综合应用。  
 4. 所有ws（WebSocket）类应用支持CDN加速。  
 5. naiveproxy=caddy2+forwardproxy（服务端）。此程序文件已编译好，本人github下载即可。  
 6. 目前caddy2的https服务进程监听采用Unix Domain Socket应用不支持h3；若开启h3，caddy无法启动。  
 
 ### 服务端特殊应用配置示例
-1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （Xray及v2ray的特殊应用配置方法。）  
+1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （Xray或v2ray的特殊应用配置方法。）  
 2. [caddy2\naiveproxy(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/caddy2%5Cnaiveproxy(other%20configuration)) （caddy2及naiveproxy的特殊应用配置方法。）  
-3. [nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流Xray及v2ray应用与网站应用的配置方法。） 
+3. [nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流Xray或v2ray应用与网站应用的配置方法。） 
 
 ### 官方客户端配置示例  
 &emsp;[client configuration](https://github.com/lxhao61/integrated-examples/tree/master/client%20configuration)（若使用第三方客户端参考即可。）
