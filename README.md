@@ -62,7 +62,7 @@
 6. 目前caddy2的https服务进程监听采用Unix Domain Socket应用不支持h3；若开启h3，caddy无法启动。  
 
 ### 服务端特殊应用配置示例
-1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （Xray及v2ray其它多种特殊应用配置方法。）  
+1. [v2ray(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(other%20configuration)) （Xray及v2ray的特殊应用配置方法。）  
 2. [caddy2\naiveproxy(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/caddy2%5Cnaiveproxy(other%20configuration)) （caddy2及naiveproxy的特殊应用配置方法。）  
 3. [nginx(other configuration)](https://github.com/lxhao61/integrated-examples/tree/master/nginx(other%20configuration)) （nginx SNI分流Xray及v2ray应用与网站应用的配置方法。） 
 
