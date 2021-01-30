@@ -24,6 +24,6 @@ v2ray tcp 类应用直连，且以 http/2 或 http/1.1 自适应代理科学上�
 
 4、nginx 预编译程序包可能不带支持 PROXY protocol 协议的模块。如要使用此项协议应用，需加 http_realip_module 与 stream_realip_module 两模块构建自定义模板，再进行源代码编译和安装。另编译时选取源代码版本建议不要低于1.13.11。
 
-5、nginx SNI 分流实现了共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
+5、此方法采用的是 SNI 方式实现共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
 
 6、配置4：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 nginx SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 nginx SNI 的进程分流，启用了 PROXY protocol。
