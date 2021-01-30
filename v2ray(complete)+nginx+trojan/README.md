@@ -23,6 +23,6 @@
 
 5、因 nginx SNI 中的 PROXY protocol（发送）是针对共用端口全部开启（全局模式），而 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故所有配置不启用此项应用。
 
-6、此方法采用的是 SNI 方式实现共用 443 端口，支持 v2ray（vless+tcp）、trojan（trojan-go）完美共存，支持各自特色应用，但需多域名（多证书或通配符证书）来标记分流。
+6、此方法采用的是 SNI 方式实现共用443端口，支持 v2ray（vless+tcp）、trojan（trojan-go）完美共存，支持各自特色应用，但需多域名（多证书或通配符证书）来标记分流。
 
 7、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
