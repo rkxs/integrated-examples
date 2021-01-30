@@ -30,6 +30,8 @@ v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp
 
 6、使用本人 github 中编译好的 caddy2 文件，才可同时支持 naiveproxy、h2c server、h2c proxy、SNI 分流及 PROXY protocol 等应用。
 
-7、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
+7、caddy2 SNI 分流实现了共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
 
-8、若有实际网站服务推荐采用 [v2ray(complete+trojan+h2c)+naiveproxy+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bnginx%5Chaproxy) 示例，否则 caddy2（naiveproxy）压力过大。
+8、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，没有启用 PROXY protocol。配置6：进程转发、进程回落\分流及 caddy2 SNI 的进程分流，启用了 PROXY protocol。
+
+9、若有实际网站服务推荐采用 [v2ray(complete+trojan+h2c)+naiveproxy+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Btrojan%2Bh2c)%2Bnaiveproxy%2Bnginx%5Chaproxy) 示例，否则 caddy2（naiveproxy）压力过大。
