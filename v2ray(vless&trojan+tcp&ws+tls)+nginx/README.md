@@ -32,7 +32,7 @@ v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协�
 
 3、trojan+tcp+tls（回落配置。）
 
-利用 nginx SNI 分流特性，实现了共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来分流标识。
+利用 nginx SNI 分流特性，实现了共用 443 端口，支持 vless+tcp 与 trojan+tcp 完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
 
 注意：
 
