@@ -25,4 +25,4 @@
 
 6、此方法采用的是 SNI 方式实现共用 443 端口，支持 vless+tcp 与 trojan（trojan-go）完美共存，支持各自 xtls 应用，但需多域名（多证书或通配符证书）来标记分流。
 
-6、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
+7、配置1：端口转发、端口回落\分流及 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。
