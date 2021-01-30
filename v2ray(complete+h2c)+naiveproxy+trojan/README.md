@@ -28,7 +28,7 @@
 
 7、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故 trojan(trojan-go) 不启用此项应用，从而回落部分不启用 PROXY protocol（接收与发送）。
 
-8、此方法采用的是 SNI 方式实现共用 443 端口，支持 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）完美共存，支持各自特色应用，但需多域名（多证书或通配符证书）来标记分流。
+8、此方法采用的是 SNI 方式实现共用443端口，支持 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）完美共存，支持各自特色应用，但需多域名（多证书或通配符证书）来标记分流。
 
 9、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），没有启用 PROXY protocol。配置6：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），启用了 PROXY protocol（回落部分除外）。
 
