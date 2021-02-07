@@ -50,4 +50,4 @@
 
 1、caddy2 等于或大于 v2.3.0版才支持 Caddyfile 配置开启 h2c server。
 
-2、使用本人 github 中编译好的 caddy2 文件（采用改进的proxyprotocol插件编译的），才支持使用 Caddyfile 配置开启 PROXY protocol 支持。
+2、使用本人 github 中编译好的 caddy2 文件（采用当前最新proxyprotocol插件编译的），才支持使用 Caddyfile 配置开启 PROXY protocol 支持。
