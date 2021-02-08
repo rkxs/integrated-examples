@@ -10,8 +10,6 @@
 
 4、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
 
-v2ray tcp 类应用直连，且以 http/2 或 http/1.1 自适应代理科学上网；v2ray ws（WebSocket）类应用分流一次。
-
 注意：
 
 1、nginx 支持 h2c server，但不支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）；故此 vless+tcp 应用中的回落端口或进程必须分开，分别对应。
