@@ -14,8 +14,6 @@
 
 6、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
 
-v2ray vless+tcp 应用直连，v2ray ws 类应用分流一次，v2ray trojan+tcp 直连，naiveproxy 直连，v2ray h2 类应用反代一次。
-
 注意：
 
 1、v2ray v4.31.0 版本及以后才支持 trojan 协议。
