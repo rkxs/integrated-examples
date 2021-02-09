@@ -54,6 +54,10 @@
       },
       "automation":{
         "policies":[{
+          "storage": {
+            "module": "file_system",
+            "root": "/home/tls" //存放tls证书路径及目录
+          },
           "issuers":[{
             "module":"acme",
             "challenges":{
@@ -64,11 +68,7 @@
                 }
               }
             }
-          }],
-          "storage": {
-            "module": "file_system",
-            "root": "/home/tls" //存放tls证书路径及目录
-          }
+          }]
         }]
       }
     }
