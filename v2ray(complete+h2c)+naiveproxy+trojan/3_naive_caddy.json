@@ -102,7 +102,7 @@
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }, 
           {
-            "wrapper":"tls"
+            "wrapper": "tls"
           }],
           "routes": [{
             "handle": [{
