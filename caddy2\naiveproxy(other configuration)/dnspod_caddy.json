@@ -52,17 +52,17 @@
       "certificates": {
         "automate": ["*.xx.yy","xx.yy"] //换成你的域名,*.xx.yy表示申请通配符证书（不包括根域名证书），xx.yy表示申请普通证书（此处xx.yy是根域名）。若不要根域名部分，可以取消。
       },
-      "automation":{
-        "policies":[{
+      "automation": {
+        "policies": [{
           "storage": {
             "module": "file_system",
             "root": "/home/tls" //存放tls证书路径及目录
           },
-          "issuers":[{
-            "module":"acme",
-            "challenges":{
-              "dns":{
-                "provider":{
+          "issuers": [{
+            "module": "acme",
+            "challenges": {
+              "dns": {
+                "provider": {
                   "name": "dnspod",
                   "auth_token": "1232456.e09062f1fd2545555fc8a15fceda2222"//换成你dnspod.cn的DP_Id与DP_Key，中间用.隔开。
                 }
