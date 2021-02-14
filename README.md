@@ -7,6 +7,7 @@
 6. 除v2ray(vless\vmess+kcp+seed)示例外，所有示例实现了回落或反代网站都支持http自动跳转到https，且SSL/TLS安全评估报告为A+。
 7. caddy2实现了Caddyfile配置开启h2c server、PROXY protocol、naiveproxy等应用支持，让caddy2配置简单化。
 8. caddy2实现了json配置SNI分流应用，且同时支持端口或进程分别PROXY protocol发送，灵活性等同haproxy SNI分流。
+9. caddy2实现了dnspod、cloudflare、dnspodcn以DNS API方式申请通tls证书，可以申请普通证书，也可以申请通配符证书。
 * **注：** 端口转发、端口回落\分流、SNI的端口分流指基于local loopback应用，不同应用实现的方式；进程转发、进程回落\分流、SNI的进程分流指基于Unix Domain Socket应用，不同应用实现的方式。
 
 ### 服务端单一应用配置示例
