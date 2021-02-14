@@ -7,7 +7,7 @@
 6. nginx实现了nginx SNI分流时同时udp代理，支持naiveproxy h3代理应用。
 7. caddy2实现了Caddyfile配置开启h2c server、PROXY protocol、naiveproxy等应用支持，让caddy2配置简单化。
 8. caddy2实现了json配置SNI分流应用，且同时支持端口或进程分别PROXY protocol发送，灵活性等同haproxy SNI分流。
-9. caddy2实现了dnspod、cloudflare、dnspodcn以DNS API方式申请及自动更新证书与私钥，配合Xray服务端（版本必须不低于 v1.3.0）更新OCSP数据前自动检查并重载证书及私钥，可以实现证书及私钥申请及更新自动化。
+9. v2ray（Xray）可以直接使用 caddy2 以 DNS API 方式申请的通配符证书及私钥，配合Xray服务端（版本必须不低于 v1.3.0）更新OCSP数据前自动检查并重载证书及私钥，可实现通配符证书及私钥申请及更新自动化。
 * **注：** 端口转发、端口回落\分流、SNI的端口分流指基于local loopback应用，不同应用实现的方式；进程转发、进程回落\分流、SNI的进程分流指基于Unix Domain Socket应用，不同应用实现的方式。
 
 ### 服务端单一应用配置示例
