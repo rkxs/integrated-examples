@@ -28,9 +28,9 @@
 
 5、本人 github 中的相关配置示例已配置 caddy2 SNI 分流共用端口 ，此配置方法仅备份及参考等。
 
-三、caddy2 以DNS API方式申请证书与私钥
+三、caddy2 以 DNS API 方式申请证书与私钥
 
-1、dnspod、cloudflare、dnspodcn以DNS API方式申请证书与私钥，可以申请普通证书，也可以申请通配符证书。
+1、dnspod、cloudflare、dnspodcn 以 DNS API 方式申请证书与私钥，可以申请普通证书，也可以申请通配符证书。
 
 2、v2ray（Xray）可以直接使用 /home/tls/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.xx.yy 路径及目录中通配符证书。
 
@@ -40,7 +40,7 @@
 
 2、cloudflare 插件目前已不支持 freenom 免费后缀的域名了。
 
-3、v2ray（Xray）可以直接使用 caddy2 以 DNS API 方式申请的通配符证书，配合 Xray 服务端（版本必须不低于v1.3.0）更新 OCSP 数据前自动检查并重载证书及私钥，从而实现证书及私钥申请及更新自动化。否则 Xray 服务端（版本低于v1.3.0）不支持自动热重载证书，证书到期更新后需手动重启 v2ray（Xray）来重新加载更新证书。
+3、v2ray（Xray）可以直接使用 caddy2 以 DNS API 方式申请的通配符证书，配合 Xray 服务端（版本必须不低于 v1.3.0）更新 OCSP 数据前自动检查并重载证书及私钥，从而实现证书及私钥申请及更新自动化。否则 v2ray（Xray）服务端（Xray 版本低于 v1.3.0）不支持自动热重载证书，证书到期更新后需手动重启 v2ray（Xray）来重新加载更新证书。
 
 四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法 
 
