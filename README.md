@@ -3,10 +3,10 @@
 2. 示例实现了端口回落\分流到进程回落\分流及PROXY protocol的从低到高（效率）应用支持。
 3. 示例实现了nginx SNI/caddy2 SNI/haproxy SNI及v2ray SNI的端口分流到进程分流及PROXY protocol的从低到高（效率）应用支持。
 4. 除v2ray(vless\vmess+kcp+seed)示例外，所有示例实现了回落或反代网站都支持http自动跳转到https，且SSL/TLS安全评估报告为A+。
-5. naiveproxy除进程监听（server进程）外，实现了支持h3代理应用，即quic协议传输。
-6. nginx实现了nginx SNI分流时同时udp代理，支持naiveproxy h3代理应用。
-7. caddy2实现了Caddyfile配置开启h2c server、PROXY protocol、naiveproxy等应用支持，让caddy2配置简单化。
-8. caddy2实现了json配置SNI分流应用，且同时支持端口或进程分别PROXY protocol发送，灵活性等同haproxy SNI分流。
+5. nginx实现了nginx SNI分流时同时udp代理，支持naiveproxy h3代理应用。
+6. caddy2实现了Caddyfile配置开启h2c server、PROXY protocol、naiveproxy等应用支持，让caddy2配置简单化。
+7. caddy2实现了json配置SNI分流应用，且同时支持端口或进程分别PROXY protocol发送，灵活性等同haproxy SNI分流。
+8. naiveproxy(caddy2)除进程监听（server进程）外，实现了支持h3代理应用，即quic协议传输。
 9. Xray服务端可以直接使用caddy2以DNS API方式申请的证书与私钥，配合Xray服务端（版本必须不低于 v1.3.0）更新OCSP数据前自动检查并重载证书与私钥，可实现证书与私钥的申请及更新自动化。
 * **注：** 端口转发、端口回落\分流、SNI的端口分流指基于local loopback应用，不同应用实现的方式；进程转发、进程回落\分流、SNI的进程分流指基于Unix Domain Socket应用，不同应用实现的方式。
 
