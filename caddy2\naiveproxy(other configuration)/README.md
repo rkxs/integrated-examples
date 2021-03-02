@@ -42,7 +42,7 @@
 
 3、v2ray（Xray）可以直接使用 caddy2 以 DNS API 方式申请的证书与私钥，配合 Xray 服务端（版本必须不低于 v1.3.0）更新 OCSP 数据前自动检查并重载证书与私钥，可实现 Xray 服务端证书与私钥的申请及更新自动化；否则 v2ray（Xray）服务端（Xray 版本低于 v1.3.0）不支持自动热重载证书，caddy2 证书到期更新后需手动重启 v2ray（Xray）来重新加载更新的证书。
 
-4、推荐采用 json 配置，否则采用 Caddyfile 配置必须启用额外无用端口来联动实现自动申请及更新证书与私钥。另外采用 Caddyfile 配置不支持进程监听模式。
+4、推荐采用 json 配置，否则采用 Caddyfile 配置必须启用额外无用端口来联动实现自动申请及更新证书与私钥。另外采用 Caddyfile 配置 DNS API 方式申请证书与私钥仅支持端口监听模式。
 
 四、naiveproxy 服务端使用 Caddyfile 配置 PROXY protocol 等方法 
 
