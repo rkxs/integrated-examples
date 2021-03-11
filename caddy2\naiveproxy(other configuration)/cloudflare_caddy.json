@@ -1,4 +1,4 @@
-//1、原配置参数（默认HTTP-01 challenge或TLS-ALPN-01 challenge申请非通配符tls证书。）：
+//1、原配置参数（默认HTTP-01 challenge或TLS-ALPN-01 challenge方式申请非通配符tls证书。）：
 .........<省略>........
           "tls_connection_policies": [{
             "match": {
@@ -38,7 +38,7 @@
     }
 .........<省略>........
 
-//cloudflare dns api申请tls证书（DNS-01 challenge申请tls证书。）
+//cloudflare以dns api方式申请tls证书（DNS-01 challenge方式申请tls证书。）
 .........<省略>........
           "tls_connection_policies": [{
             "match": {
@@ -75,4 +75,4 @@
 .........<省略>........
 注意：
 1、原来域名改成通配符域名（*.xx.yy），就申请通配符tls证书；否则就申请普通tls证书。
-2、caddy2采用dns api申请的通配符tls证书，不包括根域名证书。如要根域名证书，需加根域名申请。
+2、caddy2采用dns api方式申请的通配符tls证书，不包括根域名证书。如要根域名证书，需加根域名申请。
