@@ -1,8 +1,8 @@
 介绍：
 
-通过 caddy2 前置 Xray/v2ray server 实现 h2（h2c+tls） 反向代理，tls 由 caddy2 提供及处理；包括 vless+h2c+tls 与 vmess+h2c+tls 两种应用。
+通过 caddy2 前置 v2ray server 实现 h2（h2c+tls） 反向代理，tls 由 caddy2 提供及处理；包括 vless+h2c+tls 与 vmess+h2c+tls 两种应用。
 
-原理图： Xray/v2ray client <------ h2 ------> caddy2 <- h2c -> Xray/v2ray server
+原理图： v2ray client <------ h2 ------> caddy2 <- h2c -> v2ray server
 
 注意： 
 
