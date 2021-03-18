@@ -1,10 +1,8 @@
 介绍：
 
-v2ray 前置（监听443端口），trojan+tcp 以 h2 或 http/1.1 自适应协商连接，非 v2ray 的 web 连接回落给 caddy2。
+v2ray（Xray） 前置（监听443端口），trojan+tcp 以 h2 或 http/1.1 自适应协商连接，非 v2ray（Xray） 的 web 连接回落给 caddy2，实现了兼容 trojan，即可直接使用 trojan 客户端连接。
 
 原理图：v2ray\trojan client <------ tcp+tls ------> v2ray server <- web回落 -> caddy2
-
-此配置为 v2ray 新增 trojan 协议，以 tcp 方式传输，实现了兼容 trojan，即可直接使用 trojan 客户端连接。
 
 注意：
 
