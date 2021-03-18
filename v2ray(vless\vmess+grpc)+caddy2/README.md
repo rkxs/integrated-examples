@@ -1,6 +1,6 @@
 介绍：
 
-通过 caddy2 前置 v2ray（Xray）server 实现 grpc+tls（http/2）反向代理，tls 由 caddy2 提供及处理；包括 vless+grpc+tls 与 vmess+grpc+tls 两种应用。
+通过 caddy2 前置 v2ray（Xray） server 实现 grpc+tls（http/2）反向代理，tls 由 caddy2 提供及处理；包括 vless+grpc+tls 与 vmess+grpc+tls 两种应用。
 
 原理图： v2ray client <------ grpc+tls ------> caddy2 <- h2c -> v2ray server
 
