@@ -1,6 +1,6 @@
 介绍：
 
-此示例包括 v2ray、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 caddy2 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。caddy2 同时为 v2ray（vless+tcp）与 trojan（trojan-go）提供 web 回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+此示例包括 v2ray（Xray）、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 caddy2 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。caddy2 同时为 v2ray（vless+tcp）与 trojan（trojan-go）提供 web 回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray（Xray） 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
