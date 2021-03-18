@@ -33,7 +33,7 @@
           }
         ]
       },
-      "streamSettings":{
+      "streamSettings": {
         "security": "tls",
         "network": "grpc",
         "grpcSettings": {
