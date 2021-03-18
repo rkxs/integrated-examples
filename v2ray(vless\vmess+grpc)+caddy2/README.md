@@ -5,6 +5,7 @@
 原理图： v2ray client <------ grpc+tls ------> caddy2 <- h2c -> v2ray server
 
 注意：
+
 1、Xray 版本不小于1.40，v2ray 版本不小于v4.36.2，才完美支持grpc应用。
 
 2、caddy2 等于或大于 v2.2.0-rc.1 版才支持 h2c proxy，即支持 v2ray 的 h2（http/2）反向代理。
