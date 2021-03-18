@@ -1,8 +1,8 @@
 介绍：
 
-此配置实现了 Xray/v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，非 Xray/v2ray 的 web 连接回落给 nginx。
+此配置实现了 v2ray（Xray） 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，非 Xray/v2ray 的 web 连接回落给 nginx。
 
-原理图： Xray/v2ray client <------ tcp+tls ------> Xray/v2ray server <- web回落 -> nginx
+原理图： v2ray client <------ tcp+tls ------> v2ray server <- web回落 -> nginx
 
 注意：
 
