@@ -21,6 +21,8 @@
 ---
 1. [v2ray(vless\vmess+h2c)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bh2c)%2Bcaddy2) （caddy2反向代理vless或vmess的h2应用。） 
 ---
+1. [v2ray(vless\vmess+grpc)+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(vless%5Cvmess%2Bgrpc)%2Bcaddy2) （caddy2反向代理vless或vmess的grpc应用。） 
+---
 1. [trojan\trojan-go+caddy2](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bcaddy2) （trojan或trojan-go应用，web回落给caddy2。）  
 2. [trojan\trojan-go+nginx](https://github.com/lxhao61/integrated-examples/tree/master/trojan%5Ctrojan-go%2Bnginx) （trojan或trojan-go应用，web回落给nginx。）  
 ---
