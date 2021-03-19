@@ -1,6 +1,6 @@
 介绍：
 
-此示例包括 v2ray、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 haproxy 或 nginx 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。另外 caddy2 为 v2ray（vless+tcp）与 trojan（trojan-go）提供回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+此示例包括 v2ray（Xray）、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 haproxy 或 nginx 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。另外 caddy2 为 v2ray（vless+tcp）与 trojan（trojan-go）提供回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray（Xray） 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -20,7 +20,7 @@
 
 3、caddy2 支持 http/1.1 server 与 h2c server 共用一个端口或一个进程（Unix Domain Socket 应用）。
 
-4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。特别提醒：采用改进的 proxyprotocol 插件定制编译，才支持使用 Caddyfile 配置，否则只能使用 json 配置。
+4、caddy2 发行版不支持 PROXY protocol（接收）。如要支持 PROXY protocol 需选 caddy2-proxyprotocol 插件定制编译，或下载本人 github 中编译好的 caddy2 来使用即可。
 
 5、本示例中 naiveproxy(caddy2) 的 naive_Caddyfile 配置虽然可用，但会产生很多报错日志（暂不能解决）。
 
@@ -32,8 +32,10 @@
 
 9、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故 trojan(trojan-go) 不启用此项应用，从而回落部分不启用 PROXY protocol（接收与发送）。另外 nginx SNI 中的 PROXY protocol 发送是针对共用端口全局模式，故配置3不再使用 nginx。
 
-10、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（回落部分除外）。
+10、此方法采用的是 SNI 方式实现共用443端口，支持 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）完美共存，支持各自特色应用，但需多个域名（多个证书或通配符证书）来标记分流。
 
-11、若采用配置2、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1。nginx 添加 udp 代理。naiveproxy 把进程转发改成端口转发，且 naiveproxy http/3 开启。
+11、配置1：端口转发、端口回落\分流及 haproxy 或 nginx SNI 的端口分流，没有启用 PROXY protocol。配置2：进程转发、端口回落\分流及 haproxy 或 nginx SNI 的进程分流（trojan除外），没有启用 PROXY protocol。配置3：进程转发、端口回落\分流及 haproxy SNI 的进程分流（trojan除外），启用了 PROXY protocol（回落部分除外）。
 
-12、若除了实现最多应用的科学上网，还需提供实际网站服务，推荐本示例。网站服务可由 nginx 或 caddy2 提供服务。
+12、若采用配置2、且使用 nginx SNI 来分流的，又想 naiveproxy 开启 http/3 代理支持，可参考配置1。nginx 添加 udp 代理。naiveproxy 把进程转发改成端口转发，且 naiveproxy http/3 开启。
+
+13、若除了实现最多应用的科学上网、还需提供实际网站服务，推荐本示例、网站服务可由 nginx 或 caddy2 提供服务；否则推荐采用 [v2ray(complete+h2c)+naiveproxy+trojan](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan) 示例。

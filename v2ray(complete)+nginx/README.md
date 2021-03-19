@@ -1,6 +1,6 @@
 介绍：
 
-除 v2ray kcp 外，所用应用共用443端口。此端口由 v2ray 监听（即 v2ray 前置），利用 vless+tcp 回落/分流特性实现，分流出 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 nginx。v2ray包括如下应用：
+v2ray（Xray） 前置（监听443端口），利用 vless+tcp 强大的回落/分流特性，实现除 v2ray（Xray） kcp 外共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray（Xray） 的 web 连接回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -9,8 +9,6 @@
 3、SS+v2ray-plugin+tls（tls由vless+tcp+tls提供及处理，不需配置。）
 
 4、vless+kcp+seed（可改成vmess+kcp+seed，或添加它。）
-
-v2ray tcp 类应用直连，且以 http/2 或 http/1.1 自适应代理科学上网；v2ray ws（WebSocket）类应用分流一次。
 
 注意：
 

@@ -6,13 +6,13 @@
 
 2、本人 github 中的所有配置示例都已配置了禁用 BT，此配置方法仅备份及参考等。
 
-二、Xray fallbacks SNI 回落到不同网站的配置方法
+二、Xray fallbacks SNI shunt 回落到不同网站的配置方法
 
 此方法解决 v2ray 或 Xray 前置监听443后，不影响原来不同域名访问不同网站问题。
 
 注意：
 
-1、Xray v1.2.2 版本及以后才支持 VLESS fallbacks SNI shunt。
+1、Xray v1.2.2 版本及以后才支持 VLESS fallbacks SNI shunt。Xray v1.2.3 版本及以后才支持 Trojan fallbacks SNI shunt。
 
 2、若不同域名没有使用通配符证书，那么还需要在 Xray 中并列配置多个域名对应的证书及私钥。
 

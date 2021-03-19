@@ -1,12 +1,10 @@
 介绍：
 
-v2ray 前置（监听443端口），vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray 的 web 连接回落给 nginx。其应用如下：
+v2ray（Xray） 前置（监听443端口），利用 vless+tcp 强大的回落/分流特性，实现了共用443端口。vless+tcp 以 h2 或 http/1.1 自适应协商连接，分流 ws（WebSocket）连接，非 v2ray（Xray） 的 web 连接回落给 nginx。其应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
 2、vless+ws+tls（tls由vless+tcp+tls提供及处理，不需配置；另可改成或添加其它ws类应用，参考反向代理ws类的单一示例。）
-
-此配置利用 vless+tcp 强大的回落/分流特性，实现了共用443端口，支持 vless tcp 与任意 ws（WebSocket）类应用完美共存。
 
 注意：
 

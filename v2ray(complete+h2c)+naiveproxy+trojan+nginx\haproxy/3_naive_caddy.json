@@ -1,4 +1,3 @@
-  
 {
   "admin": {
     "disabled": true
@@ -24,7 +23,7 @@
               "handler": "static_response",
               "status_code": 301, 
               "headers": {
-              	"Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
+                "Location": ["https://{http.request.host}{http.request.uri}"] //http自动跳转https,让网站看起来更真实。
               }
             }],
             "terminal": true
@@ -55,7 +54,7 @@
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }, 
           {
-            "wrapper":"tls"
+            "wrapper": "tls"
           }],
           "routes": [{
             "handle": [{
@@ -65,44 +64,38 @@
               "hide_ip": true,
               "hide_via": true,
               "probe_resistance": {
-              	"domain": "unsplash.com:443"
+                "domain": "unsplash.com:443"
               }
             }]
           },
           {
+            "match": [{
+              "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
+            }],
             "handle": [{
-              "handler": "subroute",
-              "routes": [{
-                "match": [{
-                  "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "transport": {
-                    "protocol": "http",
-                    "versions": ["h2c"]
-                  },
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2005" //与v2ray h2 端口对应
-                  }]
-                }],
-                "terminal": true
+              "handler": "reverse_proxy",
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
               },
-              {
-                "handle": [{
-                  "handler": "headers",
-                  "response": {
-                    "set": {
-                      "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
-                    }
-                  }
-                },
-                {
-                  "handler": "file_server",
-                  "root": "/var/www/html" //修改成自己存放的web文件路径
-                }],
-                "terminal": true
+              "upstreams": [{
+                "dial": "127.0.0.1:2005" //与v2ray h2 端口对应
               }]
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"] //启用HSTS
+                }
+              }
+            },
+            {
+              "handler": "file_server",
+              "root": "/var/www/html" //修改为自己存放的web文件路径
             }],
             "terminal": true
           }],

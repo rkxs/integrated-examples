@@ -1,6 +1,6 @@
 介绍：
 
-此示例包括 v2ray、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 caddy2 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。caddy2 同时为 v2ray（vless+tcp）与 trojan（trojan-go）提供 web 回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray 包括应用如下：
+此示例包括 v2ray（Xray）、naiveproxy（caddy2）、trojan（trojan-go）应用。利用 caddy2 支持 SNI 分流特性，对 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）进行 SNI 分流（四层转发），实现除 v2ray kcp 外共用443端口。caddy2 同时为 v2ray（vless+tcp）与 trojan（trojan-go）提供 web 回落服务，为 v2ray（vless/vmess+h2c）提供反向代理，为 naiveproxy 提供正向代理。v2ray（Xray） 包括应用如下：
 
 1、vless+tcp+tls（回落/分流配置。）
 
@@ -28,6 +28,8 @@
 
 7、因 trojan(trojan-go) 不支持 PROXY protocol（接收与发送），故 trojan(trojan-go) 不启用此项应用，从而回落部分不启用 PROXY protocol（接收与发送）。
 
-8、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），没有启用 PROXY protocol。配置6：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），启用了 PROXY protocol（回落部分除外）。
+8、此方法采用的是 SNI 方式实现共用443端口，支持 v2ray（vless+tcp）、naiveproxy（caddy2）、trojan（trojan-go）完美共存，支持各自特色应用，但需多个域名（多个证书或通配符证书）来标记分流。
 
-9、若有实际网站服务不推荐采用本示例，否则 caddy2 压力过大。
+9、配置4：端口转发、端口回落\分流及 caddy2 SNI 的端口分流，没有启用 PROXY protocol。配置5：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），没有启用 PROXY protocol。配置6：进程转发、端口回落\分流及 caddy2 SNI 的进程分流（对trojan除外），启用了 PROXY protocol（回落部分除外）。
+
+10、若有实际网站服务推荐采用 [v2ray(complete+h2c)+naiveproxy+trojan+nginx\haproxy](https://github.com/lxhao61/integrated-examples/tree/master/v2ray(complete%2Bh2c)%2Bnaiveproxy%2Btrojan%2Bnginx%5Chaproxy) 示例，否则 caddy2（naiveproxy）压力过大。
