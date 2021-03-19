@@ -20,7 +20,7 @@
           "listen": [":443"],
           "routes": [{
             "match": [{
-              "protocol": ["grpc"] //分流出grpc,与本机v2ray grpc对应。
+              "protocol": "grpc" //分流出grpc,与本机v2ray grpc对应。
             }],
             "handle": [{
               "handler": "reverse_proxy",
